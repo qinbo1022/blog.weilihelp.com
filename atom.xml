@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>秦波的博客</title>
+  <icon>https://www.gravatar.com/avatar/bf7dad1a28723440e66577cf9bf349f6</icon>
+  <subtitle>我单手握着方向盘没跟谁比赛</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="//qinbo.top/"/>
+  <updated>2019-11-11T09:05:36.509Z</updated>
+  <id>//qinbo.top/</id>
+  
+  <author>
+    <name>秦波</name>
+    <email>qinbo1022@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello Life</title>
+    <link href="//qinbo.top/2019/11/11/Hello%20Life/"/>
+    <id>//qinbo.top/2019/11/11/Hello Life/</id>
+    <published>2019-11-11T09:04:52.000Z</published>
+    <updated>2019-11-11T09:05:36.509Z</updated>
+    
+    <content type="html"><![CDATA[<p>或许要开始一个崭新的生活了，过去，再见</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;或许要开始一个崭新的生活了，过去，再见&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="未分类" scheme="//qinbo.top/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+  </entry>
+  
+</feed>
