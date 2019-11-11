@@ -5,9 +5,9 @@
   <subtitle>我单手握着方向盘没跟谁比赛</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="//qinbo.top/"/>
+  <link href="//blog.qinbo.top/"/>
   <updated>2019-11-11T10:09:15.951Z</updated>
-  <id>//qinbo.top/</id>
+  <id>//blog.qinbo.top/</id>
   
   <author>
     <name>秦波</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>hexo的基本操作</title>
-    <link href="//qinbo.top/2019/11/11/hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <id>//qinbo.top/2019/11/11/hexo基本操作/</id>
+    <link href="//blog.qinbo.top/2019/11/11/hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>//blog.qinbo.top/2019/11/11/hexo基本操作/</id>
     <published>2019-11-11T09:49:50.000Z</published>
     <updated>2019-11-11T10:09:15.951Z</updated>
     
@@ -33,14 +33,14 @@
     </summary>
     
     
-      <category term="hexo" scheme="//qinbo.top/tags/hexo/"/>
+      <category term="hexo" scheme="//blog.qinbo.top/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hello Life</title>
-    <link href="//qinbo.top/2019/11/11/Hello%20Life/"/>
-    <id>//qinbo.top/2019/11/11/Hello Life/</id>
+    <link href="//blog.qinbo.top/2019/11/11/Hello%20Life/"/>
+    <id>//blog.qinbo.top/2019/11/11/Hello Life/</id>
     <published>2019-11-11T09:04:52.000Z</published>
     <updated>2019-11-11T09:05:36.509Z</updated>
     
@@ -57,7 +57,7 @@
     </summary>
     
     
-      <category term="未分类" scheme="//qinbo.top/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="//blog.qinbo.top/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
   </entry>
   
