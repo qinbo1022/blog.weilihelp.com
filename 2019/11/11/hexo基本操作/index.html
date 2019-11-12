@@ -26,6 +26,10 @@
   
     <link rel="icon" href="/assets/img/favicon.ico">
   
+  
+	<link rel="stylesheet" href="/lib/gitalk/gitalk.css">
+	<script src="/lib/gitalk/gitalk.min.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
   
@@ -332,6 +336,24 @@ var _hmt = _hmt || [];
   
 
   
+
+
+<div class="gitalk">
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+            clientID: '17fb7ed2646169e20d8f',
+            clientSecret: '19426765ecbd5c3489d0ad82515b833e4c6a814a',
+            repo: 'gitmentData',
+            owner: 'qinbo1022',
+            admin: ['qinbo1022'],
+            id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+ 
+        gitalk.render('gitalk-container')
+    </script>
+</div>
 
 
           </div>
