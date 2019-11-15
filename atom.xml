@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>秦波的博客</title>
+  <title>bobo的鬼屋</title>
   <icon>https://www.gravatar.com/avatar/bf7dad1a28723440e66577cf9bf349f6</icon>
   <subtitle>我单手握着方向盘没跟谁比赛</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>//blog.qinbo.top/</id>
   
   <author>
-    <name>秦波</name>
+    <name>bobo</name>
     <email>qinbo1022@qq.com</email>
   </author>
   
