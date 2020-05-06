@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//blog.qinbo.top/"/>
-  <updated>2019-11-29T06:04:53.493Z</updated>
+  <updated>2020-04-30T07:25:35.724Z</updated>
   <id>//blog.qinbo.top/</id>
   
   <author>
@@ -17,31 +17,97 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>需紧急提升的点</title>
-    <link href="//blog.qinbo.top/2019/11/28/%E9%9C%80%E7%B4%A7%E6%80%A5%E6%8F%90%E5%8D%87%E7%9A%84%E7%82%B9/"/>
-    <id>//blog.qinbo.top/2019/11/28/需紧急提升的点/</id>
-    <published>2019-11-28T06:54:56.000Z</published>
-    <updated>2019-11-29T06:04:53.493Z</updated>
+    <title>常用pom依赖</title>
+    <link href="//blog.qinbo.top/2020/04/27/%E5%B8%B8%E7%94%A8pom%E4%BE%9D%E8%B5%96/"/>
+    <id>//blog.qinbo.top/2020/04/27/常用pom依赖/</id>
+    <published>2020-04-27T03:11:49.000Z</published>
+    <updated>2020-04-30T07:25:35.724Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>服务器硬件知识，cpu工作情况，cpu和gup的区别</li><li>cpu内存使用情况分析（谁在用，什么操作用的什么多）</li><li>gradle</li><li>mock data</li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="一-Spring工具包"><a href="#一-Spring工具包" class="headerlink" title="一.Spring工具包"></a>一.Spring工具包</h3><h4 id="1-spring-boot-starter-web"><a href="#1-spring-boot-starter-web" class="headerlink" title="1. spring-boot-starter-web"></a>1. spring-boot-starter-web</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>对Web项目开发支持，包含Tomcat和Spring webmvc等，RestTemplate也在此包中</p><a id="more"></a><h4 id="2-spring-boot-starter-test"><a href="#2-spring-boot-starter-test" class="headerlink" title="2.spring-boot-starter-test"></a>2.spring-boot-starter-test</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>单元测试相关依赖，包括junit相关的包</p><h4 id="3-spring-boot-starter-data-jpa"><a href="#3-spring-boot-starter-data-jpa" class="headerlink" title="3.spring-boot-starter-data-jpa"></a>3.spring-boot-starter-data-jpa</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>包含基于ORM框架和JPA规范的操作工具包，快速操作数据库实现增删改查</p><h3 id="二、数据库连接类"><a href="#二、数据库连接类" class="headerlink" title="二、数据库连接类"></a>二、数据库连接类</h3><h4 id="1-mysql连接依赖"><a href="#1-mysql连接依赖" class="headerlink" title="1. mysql连接依赖"></a>1. mysql连接依赖</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h4 id="2-oracle连接依赖"><a href="#2-oracle连接依赖" class="headerlink" title="2.oracle连接依赖"></a>2.oracle连接依赖</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.oracle.ojdbc&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;ojdbc8&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h3 id="三、常用工具依赖"><a href="#三、常用工具依赖" class="headerlink" title="三、常用工具依赖"></a>三、常用工具依赖</h3><h4 id="1-lombok"><a href="#1-lombok" class="headerlink" title="1. lombok"></a>1. lombok</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>省去setter、getter方法，自带Slf4j日志包</p><h4 id="2-configuration-processor"><a href="#2-configuration-processor" class="headerlink" title="2. configuration-processor"></a>2. configuration-processor</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>将配置文件的属性转换为实体类</p><h4 id="3-热重启"><a href="#3-热重启" class="headerlink" title="3. 热重启"></a>3. 热重启</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>修改代码自动重启</p><h4 id="4-Google-Guava"><a href="#4-Google-Guava" class="headerlink" title="4. Google Guava"></a>4. Google Guava</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.google.guava&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;guava&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;23.6.1-jre&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>guava相关的包，包含很多有用的工具</p><h3 id="web网络请求相关"><a href="#web网络请求相关" class="headerlink" title="web网络请求相关"></a>web网络请求相关</h3><h4 id="1-httpclient"><a href="#1-httpclient" class="headerlink" title="1.httpclient"></a>1.httpclient</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;httpclient&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.5.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一-Spring工具包&quot;&gt;&lt;a href=&quot;#一-Spring工具包&quot; class=&quot;headerlink&quot; title=&quot;一.Spring工具包&quot;&gt;&lt;/a&gt;一.Spring工具包&lt;/h3&gt;&lt;h4 id=&quot;1-spring-boot-starter-web&quot;&gt;&lt;a href=&quot;#1-spring-boot-starter-web&quot; class=&quot;headerlink&quot; title=&quot;1. spring-boot-starter-web&quot;&gt;&lt;/a&gt;1. spring-boot-starter-web&lt;/h4&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;对Web项目开发支持，包含Tomcat和Spring webmvc等，RestTemplate也在此包中&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="衣来伸手" scheme="//blog.qinbo.top/tags/%E8%A1%A3%E6%9D%A5%E4%BC%B8%E6%89%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>时间简史</title>
+    <link href="//blog.qinbo.top/2020/01/09/%E6%96%B0%E4%B8%80%E5%B9%B4%E7%9A%84%E6%96%B0%E6%83%B3%E6%B3%95/"/>
+    <id>//blog.qinbo.top/2020/01/09/新一年的新想法/</id>
+    <published>2020-01-09T07:55:23.000Z</published>
+    <updated>2020-01-09T08:44:21.945Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="无法停止的时间"><a href="#无法停止的时间" class="headerlink" title="无法停止的时间"></a>无法停止的时间</h5>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;ol&gt;
-&lt;li&gt;服务器硬件知识，cpu工作情况，cpu和gup的区别&lt;/li&gt;
-&lt;li&gt;cpu内存使用情况分析（谁在用，什么操作用的什么多）&lt;/li&gt;
-&lt;li&gt;gradle&lt;/li&gt;
-&lt;li&gt;mock data&lt;/li&gt;
-&lt;/ol&gt;
-
+        &lt;h5 id=&quot;无法停止的时间&quot;&gt;&lt;a href=&quot;#无法停止的时间&quot; class=&quot;headerlink&quot; title=&quot;无法停止的时间&quot;&gt;&lt;/a&gt;无法停止的时间&lt;/h5&gt;
       
     
     </summary>
     
     
       <category term="未分类" scheme="//blog.qinbo.top/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud基础组件</title>
+    <link href="//blog.qinbo.top/2019/12/26/SpringCloud%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/"/>
+    <id>//blog.qinbo.top/2019/12/26/SpringCloud基础组件/</id>
+    <published>2019-12-26T03:15:20.000Z</published>
+    <updated>2019-12-26T11:34:48.048Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>Eureka - 服务注册中心</li><li>Ribbon - 负载均衡</li><li>Hystrix - 断路器</li><li>Feign - 声明式服务调用</li><li>Zuul - API网关</li><li>Config - 配置中心</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;Eureka - 服务注册中心&lt;/li&gt;
+&lt;li&gt;Ribbon - 负载均衡&lt;/li&gt;
+&lt;li&gt;Hystrix - 断路器&lt;/li&gt;
+&lt;li&gt;Feign - 声明式服务调用&lt;/li&gt;
+&lt;li&gt;Zuul - API网关&lt;/li&gt;
+&lt;li&gt;Config - 配置中心
+      
+    
+    </summary>
+    
+    
+      <category term="springcloud" scheme="//blog.qinbo.top/tags/springcloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金字塔原理解读</title>
+    <link href="//blog.qinbo.top/2019/12/25/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E8%AF%BB/"/>
+    <id>//blog.qinbo.top/2019/12/25/金字塔原理解读/</id>
+    <published>2019-12-25T12:09:34.000Z</published>
+    <updated>2019-12-25T13:01:38.204Z</updated>
+    
+    <content type="html"><![CDATA[<p>什么是金字塔原理？</p><p>它应用于哪些方面？</p><p>该如何做？</p><a id="more"></a><ol><li><p>什么是金字塔原理？</p><p>金字塔原理是一种思想，它能改变你的思维方式，让你能清晰的展现你的思路和逻辑。</p></li><li><p>他应用于哪些方面？</p><ol><li>表达的逻辑</li><li>思考的逻辑</li><li>解决问题的逻辑</li><li>演示的逻辑</li></ol></li><li><p>要如何做？</p><p>金字塔的核心思想就是提升逻辑性，分析问题更加全面，合理的划分问题的层级关系，</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;什么是金字塔原理？&lt;/p&gt;
+&lt;p&gt;它应用于哪些方面？&lt;/p&gt;
+&lt;p&gt;该如何做？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="读书" scheme="//blog.qinbo.top/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
