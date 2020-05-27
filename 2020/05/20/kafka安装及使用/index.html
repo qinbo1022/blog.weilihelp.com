@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="//blog.qinbo.top">
   <title>kafka安装及使用 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="kafka的基本使用总结。">
-<meta name="keywords" content="未分类">
+  <meta name="description" content="单机kafka的部署过程记录。">
+<meta name="keywords" content="kafka">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kafka安装及使用">
 <meta property="og:url" content="//blog.qinbo.top/2020/05/20/kafka安装及使用/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="kafka的基本使用总结。">
+<meta property="og:description" content="单机kafka的部署过程记录。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195203.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195252.png">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195532.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195422.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195326.png">
-<meta property="og:updated_time" content="2020-05-20T11:55:54.819Z">
+<meta property="og:updated_time" content="2020-05-27T06:05:32.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kafka安装及使用">
-<meta name="twitter:description" content="kafka的基本使用总结。">
+<meta name="twitter:description" content="单机kafka的部署过程记录。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195203.png">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
@@ -195,12 +195,12 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>kafka的基本使用总结。</p>
+        <p>单机kafka的部署过程记录。</p>
 <a id="more"></a>
 <h3 id="一-下载"><a href="#一-下载" class="headerlink" title="一.下载"></a>一.下载</h3><p>本篇使用版本为</p>
 <p>kafka_2.11-2.1.0</p>
 <p>zookeeper-3.4.14</p>
-<p>自行下载</p>
+<p>自行官网下载</p>
 <h3 id="二-配置"><a href="#二-配置" class="headerlink" title="二.配置"></a>二.配置</h3><h4 id="zookeeper配置"><a href="#zookeeper配置" class="headerlink" title="zookeeper配置"></a>zookeeper配置</h4><p>zk是kafka的注册中心，先配置zk</p>
 <h5 id="1-修改zoo-cfg（zoo-simple-cfg）"><a href="#1-修改zoo-cfg（zoo-simple-cfg）" class="headerlink" title="1. 修改zoo.cfg（zoo.simple.cfg）"></a>1. 修改zoo.cfg（zoo.simple.cfg）</h5><p>a）修改默认接口2181为2180，避免冲突</p>
 <p>b）修改dataDir为自定义目录，此文件夹用于存放数据文件</p>
@@ -272,7 +272,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未分类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">kafka</a>
         		</li>
       		
 		</ul>
@@ -290,6 +290,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/27/github图床配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          github图床配置
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/11/hexo基本操作/" id="article-nav-older" class="article-nav-link-wrap">
@@ -439,11 +448,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">歌词</a>
+                <a href="javascript:void(0)" class="js-tag color2">springcloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未分类</a>
+                <a href="javascript:void(0)" class="js-tag color3">歌词</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,7 +460,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">springcloud</a>
+                <a href="javascript:void(0)" class="js-tag color4">未分类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,6 +473,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图床</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">
