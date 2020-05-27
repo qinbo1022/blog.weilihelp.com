@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//blog.qinbo.top/"/>
-  <updated>2020-04-30T07:25:35.724Z</updated>
+  <updated>2020-05-20T11:55:54.819Z</updated>
   <id>//blog.qinbo.top/</id>
   
   <author>
@@ -17,182 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>常用pom依赖</title>
-    <link href="//blog.qinbo.top/2020/04/27/%E5%B8%B8%E7%94%A8pom%E4%BE%9D%E8%B5%96/"/>
-    <id>//blog.qinbo.top/2020/04/27/常用pom依赖/</id>
-    <published>2020-04-27T03:11:49.000Z</published>
-    <updated>2020-04-30T07:25:35.724Z</updated>
+    <title>kafka安装及使用</title>
+    <link href="//blog.qinbo.top/2020/05/20/kafka%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>//blog.qinbo.top/2020/05/20/kafka安装及使用/</id>
+    <published>2020-05-20T05:58:22.000Z</published>
+    <updated>2020-05-20T11:55:54.819Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="一-Spring工具包"><a href="#一-Spring工具包" class="headerlink" title="一.Spring工具包"></a>一.Spring工具包</h3><h4 id="1-spring-boot-starter-web"><a href="#1-spring-boot-starter-web" class="headerlink" title="1. spring-boot-starter-web"></a>1. spring-boot-starter-web</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>对Web项目开发支持，包含Tomcat和Spring webmvc等，RestTemplate也在此包中</p><a id="more"></a><h4 id="2-spring-boot-starter-test"><a href="#2-spring-boot-starter-test" class="headerlink" title="2.spring-boot-starter-test"></a>2.spring-boot-starter-test</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>单元测试相关依赖，包括junit相关的包</p><h4 id="3-spring-boot-starter-data-jpa"><a href="#3-spring-boot-starter-data-jpa" class="headerlink" title="3.spring-boot-starter-data-jpa"></a>3.spring-boot-starter-data-jpa</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>包含基于ORM框架和JPA规范的操作工具包，快速操作数据库实现增删改查</p><h3 id="二、数据库连接类"><a href="#二、数据库连接类" class="headerlink" title="二、数据库连接类"></a>二、数据库连接类</h3><h4 id="1-mysql连接依赖"><a href="#1-mysql连接依赖" class="headerlink" title="1. mysql连接依赖"></a>1. mysql连接依赖</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h4 id="2-oracle连接依赖"><a href="#2-oracle连接依赖" class="headerlink" title="2.oracle连接依赖"></a>2.oracle连接依赖</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.oracle.ojdbc&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;ojdbc8&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h3 id="三、常用工具依赖"><a href="#三、常用工具依赖" class="headerlink" title="三、常用工具依赖"></a>三、常用工具依赖</h3><h4 id="1-lombok"><a href="#1-lombok" class="headerlink" title="1. lombok"></a>1. lombok</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>省去setter、getter方法，自带Slf4j日志包</p><h4 id="2-configuration-processor"><a href="#2-configuration-processor" class="headerlink" title="2. configuration-processor"></a>2. configuration-processor</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>将配置文件的属性转换为实体类</p><h4 id="3-热重启"><a href="#3-热重启" class="headerlink" title="3. 热重启"></a>3. 热重启</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">    &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>修改代码自动重启</p><h4 id="4-Google-Guava"><a href="#4-Google-Guava" class="headerlink" title="4. Google Guava"></a>4. Google Guava</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.google.guava&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;guava&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;23.6.1-jre&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>guava相关的包，包含很多有用的工具</p><h3 id="web网络请求相关"><a href="#web网络请求相关" class="headerlink" title="web网络请求相关"></a>web网络请求相关</h3><h4 id="1-httpclient"><a href="#1-httpclient" class="headerlink" title="1.httpclient"></a>1.httpclient</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;httpclient&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.5.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;一-Spring工具包&quot;&gt;&lt;a href=&quot;#一-Spring工具包&quot; class=&quot;headerlink&quot; title=&quot;一.Spring工具包&quot;&gt;&lt;/a&gt;一.Spring工具包&lt;/h3&gt;&lt;h4 id=&quot;1-spring-boot-starter-web&quot;&gt;&lt;a href=&quot;#1-spring-boot-starter-web&quot; class=&quot;headerlink&quot; title=&quot;1. spring-boot-starter-web&quot;&gt;&lt;/a&gt;1. spring-boot-starter-web&lt;/h4&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;对Web项目开发支持，包含Tomcat和Spring webmvc等，RestTemplate也在此包中&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="衣来伸手" scheme="//blog.qinbo.top/tags/%E8%A1%A3%E6%9D%A5%E4%BC%B8%E6%89%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时间简史</title>
-    <link href="//blog.qinbo.top/2020/01/09/%E6%96%B0%E4%B8%80%E5%B9%B4%E7%9A%84%E6%96%B0%E6%83%B3%E6%B3%95/"/>
-    <id>//blog.qinbo.top/2020/01/09/新一年的新想法/</id>
-    <published>2020-01-09T07:55:23.000Z</published>
-    <updated>2020-01-09T08:44:21.945Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="无法停止的时间"><a href="#无法停止的时间" class="headerlink" title="无法停止的时间"></a>无法停止的时间</h5>]]></content>
+    <content type="html"><![CDATA[<p>kafka的基本使用总结。</p><a id="more"></a><h3 id="一-下载"><a href="#一-下载" class="headerlink" title="一.下载"></a>一.下载</h3><p>本篇使用版本为</p><p>kafka_2.11-2.1.0</p><p>zookeeper-3.4.14</p><p>自行下载</p><h3 id="二-配置"><a href="#二-配置" class="headerlink" title="二.配置"></a>二.配置</h3><h4 id="zookeeper配置"><a href="#zookeeper配置" class="headerlink" title="zookeeper配置"></a>zookeeper配置</h4><p>zk是kafka的注册中心，先配置zk</p><h5 id="1-修改zoo-cfg（zoo-simple-cfg）"><a href="#1-修改zoo-cfg（zoo-simple-cfg）" class="headerlink" title="1. 修改zoo.cfg（zoo.simple.cfg）"></a>1. 修改zoo.cfg（zoo.simple.cfg）</h5><p>a）修改默认接口2181为2180，避免冲突</p><p>b）修改dataDir为自定义目录，此文件夹用于存放数据文件</p><p>c）新建dataLogDir为自定义目录 数据文件日志</p><p><strong>ps：必须填写绝对路径</strong></p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195203.png" alt="test"></p><h5 id="2-启动zk并查看其状态"><a href="#2-启动zk并查看其状态" class="headerlink" title="2.启动zk并查看其状态"></a>2.启动zk并查看其状态</h5><p>进入bin目录，执行命令启动</p><blockquote><p>./zkServer.sh start</p></blockquote><p>启动成功后使用</p><blockquote><p>./zkServer.sh status</p></blockquote><p>查看启动状态</p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195252.png" alt></p><h4 id="kafka配置"><a href="#kafka配置" class="headerlink" title="kafka配置"></a>kafka配置</h4><h5 id="1-配置server-properties"><a href="#1-配置server-properties" class="headerlink" title="1.配置server.properties"></a>1.配置server.properties</h5><p>a）创建数据存放目录</p><p>b）修改日志存放目录log.dirs</p><p>c）修改zookeeper的连接地址</p><p>d）修改默认端口端口</p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195452.png" alt></p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195512.png" alt></p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195532.png" alt></p><h5 id="2-配置producer-properties"><a href="#2-配置producer-properties" class="headerlink" title="2.配置producer.properties"></a>2.配置producer.properties</h5><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195422.png" alt></p><h5 id="3-配置zookeeper-properties"><a href="#3-配置zookeeper-properties" class="headerlink" title="3.配置zookeeper.properties"></a>3.配置zookeeper.properties</h5><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195326.png" alt></p><h5 id="4-启动"><a href="#4-启动" class="headerlink" title="4.启动"></a>4.启动</h5><blockquote><p>bin/kafka-server-start.sh config/server.properties</p></blockquote><p>执行启动命令，指定配置文件【这一步建议放到tmux或nohup执行】</p><h3 id="三-测试"><a href="#三-测试" class="headerlink" title="三.测试"></a>三.测试</h3><h5 id="1-创建topic"><a href="#1-创建topic" class="headerlink" title="1.创建topic"></a>1.创建topic</h5><blockquote><p>bin/kafka-topics.sh –create –zookeeper localhost:2180 –replication-factor 1 –partitions 8 –topic test_topic</p></blockquote><p>指定zk地址，副本数，分区数，topic名称</p><h5 id="2-查看topic"><a href="#2-查看topic" class="headerlink" title="2.查看topic"></a>2.查看topic</h5><blockquote><p>bin/kafka-topics.sh –list –zookeeper 127.0.0.1:2180</p></blockquote><h5 id="3-启动一个控制台生产者和控制台消费者验证是否正常使用"><a href="#3-启动一个控制台生产者和控制台消费者验证是否正常使用" class="headerlink" title="3.启动一个控制台生产者和控制台消费者验证是否正常使用"></a>3.启动一个控制台生产者和控制台消费者验证是否正常使用</h5><ul><li><p>控制台生产者</p><blockquote><p>bin/kafka-console-producer.sh –broker-list 127.0.0.1:9090 –topic test_topic</p></blockquote></li><li><p>控制台消费者</p><blockquote><p>bin/kafka-console-consumer.sh –bootstrap-server 127.0.0.1:9090 –topic test_topic –from-beginning</p></blockquote></li></ul><h3 id="四-其他命令"><a href="#四-其他命令" class="headerlink" title="四.其他命令"></a>四.其他命令</h3><p>1.修改分区数</p><blockquote><p>./bin/kafka-topics.sh –alter –zookeeper 127.0.0.1:2180 –topic test_topic –partitions 8</p></blockquote><p>2.查看分区</p><blockquote><p>./bin/kafka-topics.sh –describe –zookeeper 127.0.0.1:2180 –topic test_topic</p></blockquote><p><strong>提高分区数是提高并发的有效方式</strong></p><p>kafka_2.11-2.1.0</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h5 id=&quot;无法停止的时间&quot;&gt;&lt;a href=&quot;#无法停止的时间&quot; class=&quot;headerlink&quot; title=&quot;无法停止的时间&quot;&gt;&lt;/a&gt;无法停止的时间&lt;/h5&gt;
-      
+      &lt;p&gt;kafka的基本使用总结。&lt;/p&gt;
     
     </summary>
     
     
       <category term="未分类" scheme="//blog.qinbo.top/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringCloud基础组件</title>
-    <link href="//blog.qinbo.top/2019/12/26/SpringCloud%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/"/>
-    <id>//blog.qinbo.top/2019/12/26/SpringCloud基础组件/</id>
-    <published>2019-12-26T03:15:20.000Z</published>
-    <updated>2019-12-26T11:34:48.048Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>Eureka - 服务注册中心</li><li>Ribbon - 负载均衡</li><li>Hystrix - 断路器</li><li>Feign - 声明式服务调用</li><li>Zuul - API网关</li><li>Config - 配置中心</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;Eureka - 服务注册中心&lt;/li&gt;
-&lt;li&gt;Ribbon - 负载均衡&lt;/li&gt;
-&lt;li&gt;Hystrix - 断路器&lt;/li&gt;
-&lt;li&gt;Feign - 声明式服务调用&lt;/li&gt;
-&lt;li&gt;Zuul - API网关&lt;/li&gt;
-&lt;li&gt;Config - 配置中心
-      
-    
-    </summary>
-    
-    
-      <category term="springcloud" scheme="//blog.qinbo.top/tags/springcloud/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>金字塔原理解读</title>
-    <link href="//blog.qinbo.top/2019/12/25/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E8%AF%BB/"/>
-    <id>//blog.qinbo.top/2019/12/25/金字塔原理解读/</id>
-    <published>2019-12-25T12:09:34.000Z</published>
-    <updated>2019-12-25T13:01:38.204Z</updated>
-    
-    <content type="html"><![CDATA[<p>什么是金字塔原理？</p><p>它应用于哪些方面？</p><p>该如何做？</p><a id="more"></a><ol><li><p>什么是金字塔原理？</p><p>金字塔原理是一种思想，它能改变你的思维方式，让你能清晰的展现你的思路和逻辑。</p></li><li><p>他应用于哪些方面？</p><ol><li>表达的逻辑</li><li>思考的逻辑</li><li>解决问题的逻辑</li><li>演示的逻辑</li></ol></li><li><p>要如何做？</p><p>金字塔的核心思想就是提升逻辑性，分析问题更加全面，合理的划分问题的层级关系，</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;什么是金字塔原理？&lt;/p&gt;
-&lt;p&gt;它应用于哪些方面？&lt;/p&gt;
-&lt;p&gt;该如何做？&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="读书" scheme="//blog.qinbo.top/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>遥不可及的你</title>
-    <link href="//blog.qinbo.top/2019/11/15/%E9%81%A5%E4%B8%8D%E5%8F%AF%E5%8F%8A%E7%9A%84%E4%BD%A0/"/>
-    <id>//blog.qinbo.top/2019/11/15/遥不可及的你/</id>
-    <published>2019-11-15T10:28:02.000Z</published>
-    <updated>2019-11-15T10:30:03.365Z</updated>
-    
-    <content type="html"><![CDATA[<p>我从前相信</p><p>这世上有一个温暖的人</p><a id="more"></a><p>只为我悲喜</p><p>为我抵挡这人间的锋利</p><p>为了找到你</p><p>不放过任何蛛丝马迹</p><p>而事到如今</p><p>才明白我命里没你</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我从前相信&lt;/p&gt;
-&lt;p&gt;这世上有一个温暖的人&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="歌词" scheme="//blog.qinbo.top/tags/%E6%AD%8C%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔2</title>
-    <link href="//blog.qinbo.top/2019/11/15/%E9%9A%8F%E7%AC%942/"/>
-    <id>//blog.qinbo.top/2019/11/15/随笔2/</id>
-    <published>2019-11-15T09:02:23.000Z</published>
-    <updated>2019-11-15T10:17:26.130Z</updated>
-    
-    <content type="html"><![CDATA[<p>总想把自己整得清清楚楚明明白白</p><p>清楚和明白总是暂时的</p><p>茫然和无助却会一直陪伴着你</p><a id="more"></a><p>所以没必要方方面面都清楚明白</p><p>只要选择一个模糊的方向</p><p>一直向前，一直向前</p><p>总会到达彼岸</p><hr><p>人生是一次海上行船</p><p>望不到对岸</p><p>在你还没准备好的时候已经悄然出发</p><p>航行一段时间你才幡然醒悟，我要去哪里？</p><p>你停船四顾，发现已经找不到来的方向</p><p>迷茫的航行中，你本能的抓🐟维持生命</p><p>在经历数次风暴之后，你觉得不能再漫无目的的漂流了，你得找到方向，靠港停船</p><p>好在你手里还有一枚指南针</p><p>想起记忆中大人们跟你说的 在西边有一座繁华的城市</p><p>你神往已久，决定就去这里</p><p>划呀划呀，划了很久，却还是望不到边的海际线</p><p>你突然累了，十分沮丧，开始怀疑起大人们的话</p><p>你划的速度开始变慢了，可你的心情可没人去体会</p><p>狂风暴雨依旧毫不留情的拍击着本就沮丧的你，你难受得亚匹</p><p>第二天天气晴朗了，你发现不远处有一座美丽的小岛</p><p>顿时，你又有了动力</p><p>奋力的划了很久，却发现小岛越来越模糊</p><p>呵，原来是海市蜃楼啊</p><p>你躺在船上，望着浩瀚无垠的夜空，想着天上是不是也有人在奋力的划船，在疲惫下渐渐睡去</p><p>又是一个晴朗的日子，太阳晒得你不得不起来</p><p>你打算重整旗鼓，拿出那颗老旧的指南针</p><p>不知不觉中，又航行了很久</p><p>日子变得枯燥起来，曾经让你棘手的暴风雨现在也能轻易招架</p><p>你发现眼中再也出现不了第二个人影，孤独渐渐将你包围</p><p>带着不是希望的希望，继续望前航行着</p><p>终于，远处出现了灯塔的影子</p><p>望着灯影，心里升起了一丝兴奋，但一瞬而逝</p><p>慢慢的靠过去，确认了这就是你一直神往的城市</p><p>本应该十分高兴的你心里却没有泛起一丝涟漪</p><p>它似乎平平无奇</p><p>你发现你的情绪似乎不太对</p><p>不应该感到高兴感到兴奋和幸福才对吗</p><p>你找不到答案，只能告诉自己</p><p>或许，这就是所谓的人生吧</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;总想把自己整得清清楚楚明明白白&lt;/p&gt;
-&lt;p&gt;清楚和明白总是暂时的&lt;/p&gt;
-&lt;p&gt;茫然和无助却会一直陪伴着你&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="//blog.qinbo.top/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔</title>
-    <link href="//blog.qinbo.top/2019/11/15/%E9%9A%8F%E7%AC%94/"/>
-    <id>//blog.qinbo.top/2019/11/15/随笔/</id>
-    <published>2019-11-15T06:32:25.000Z</published>
-    <updated>2019-11-15T09:58:53.280Z</updated>
-    
-    <content type="html"><![CDATA[<p>我曾以为，随着时间的推移，我会变的越来越成熟</p><p>源于莫名的自信，源于既有的经验</p><a id="more"></a><p>殊不知 我已经随着既有的经验过了十几年</p><p>混了十几年 被动的生成了我不太坚固的三观</p><p>工作后，在歌里、软文中、深夜里</p><p>一次次的潜意识的变化</p><p>一次次觉得自我认同</p><p>又一次次的自我否定</p><p>终于开始恐惧了，拾回曾经的逃避</p><p>自我挣扎结束了，随之而来的是漫漫的长夜</p><p>长夜漫漫，唯剑作伴</p><p>我的故事还没有完结</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我曾以为，随着时间的推移，我会变的越来越成熟&lt;/p&gt;
-&lt;p&gt;源于莫名的自信，源于既有的经验&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="//blog.qinbo.top/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>山丘</title>
-    <link href="//blog.qinbo.top/2019/11/15/%E5%B1%B1%E4%B8%98/"/>
-    <id>//blog.qinbo.top/2019/11/15/山丘/</id>
-    <published>2019-11-15T05:58:29.000Z</published>
-    <updated>2019-11-15T10:17:33.473Z</updated>
-    
-    <content type="html"><![CDATA[<p>想说却还没说的</p><p>还很多</p><a id="more"></a> <p>攒着是因为想写成歌</p><p>让人轻轻的唱着 淡淡的记着</p><p>就算终于忘了 也值了</p><p>说不定我一生涓滴意念</p><p>侥幸汇成河</p><p>然后我俩各自一端 </p><p>望着大河湾湾 终于敢放胆</p><p>嬉皮笑脸面对 人生的难</p><p>也许我们从未成熟</p><p>还没能晓得 就已经老了</p><p>尽管心里面活着的还是那个年轻人</p><p>因为不安而频频回首</p><p>无止的索求 羞耻于求救</p><p>不知疲倦的翻阅 每一个山丘</p><p>越过山丘 虽然已白了头</p><p>喋喋不休 时不我与的哀愁</p><p>还未如愿见着不朽 就把自己先搞丢</p><p>越过山丘 才发现无人等候</p><p>喋喋不休 再也唤不回温柔</p><p>为何记不得上一次是谁给的拥抱</p><p>在什么时候</p><p>我没有刻意隐藏 也无意让你感伤</p><p>多少次我们无醉不欢 </p><p>咒骂人生太短 唏嘘相见恨晚</p><p>让女人把妆哭花了 也不管</p><p>遗憾我们从未成熟</p><p>还没能晓得就已经老了</p><p>尽力仍不明白 身边的年轻人</p><p>给自己随便找个理由 </p><p>向情爱的挑逗 命运的左右</p><p>不自量力的还手 直至死方休</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;想说却还没说的&lt;/p&gt;
-&lt;p&gt;还很多&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="歌词" scheme="//blog.qinbo.top/tags/%E6%AD%8C%E8%AF%8D/"/>
     
   </entry>
   
