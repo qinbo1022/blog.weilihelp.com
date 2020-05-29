@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>bobo的鬼屋</title>
+  <title>设计模式之建造者模式（1/23） | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java后端Boy">
-<meta name="keywords" content="代码">
-<meta property="og:type" content="website">
-<meta property="og:title" content="bobo的鬼屋">
-<meta property="og:url" content="//blog.qinbo.top/index.html">
+  <meta name="description" content="建造者模式 一、what什么是建造者模式？   造者模式(Builder Pattern)：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。建造者模式属于对象创建型模式。建造者模式又可以称为生成器模式。   二、why为什么要用建造者模式? 软件开发过程中，存在一些复杂的对象，它们拥有一系列成员属性，而且在这些复杂对象中，还可能存在一些限制条件，如某些属性没有赋值则复杂对">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之建造者模式（1&#x2F;23）">
+<meta property="og:url" content="//blog.qinbo.top/2020/05/29/设计模式之建造者模式（1-23）/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="Java后端Boy">
+<meta property="og:description" content="建造者模式 一、what什么是建造者模式？   造者模式(Builder Pattern)：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。建造者模式属于对象创建型模式。建造者模式又可以称为生成器模式。   二、why为什么要用建造者模式? 软件开发过程中，存在一些复杂的对象，它们拥有一系列成员属性，而且在这些复杂对象中，还可能存在一些限制条件，如某些属性没有赋值则复杂对">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200529181305.png">
+<meta property="og:updated_time" content="2020-05-29T11:33:34.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bobo的鬼屋">
-<meta name="twitter:description" content="Java后端Boy">
+<meta name="twitter:title" content="设计模式之建造者模式（1&#x2F;23）">
+<meta name="twitter:description" content="建造者模式 一、what什么是建造者模式？   造者模式(Builder Pattern)：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。建造者模式属于对象创建型模式。建造者模式又可以称为生成器模式。   二、why为什么要用建造者模式? 软件开发过程中，存在一些复杂的对象，它们拥有一系列成员属性，而且在这些复杂对象中，还可能存在一些限制条件，如某些属性没有赋值则复杂对">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200529181305.png">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -156,16 +159,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-设计模式之建造者模式（1-23）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-设计模式之建造者模式（1-23）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/29/设计模式之建造者模式（1-23）/">设计模式之建造者模式（1/23）</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式之建造者模式（1/23）
     </h1>
   
 
@@ -252,16 +253,75 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/29/设计模式之建造者模式（1-23）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3a0W6DMAwF0P7/T2+vkzbg2o7VTjo8VRRoTirFxvHrFR9fv46rb5Mn/DxzdWV+/sCBh4eHNx76/VAS6v3n+0nJx3N/DR4eHt42734h7oWEHj75lULwwMPDw/swXjWPrYYWPDw8vP/Oy4fee/JKIQMPDw9vjZcv5fNCxj0jCUsrtRY8PDy8mJenyJ/zeWV/Dw8PD2+8qz5Z7vPSw6SE8TBOPDw8vAVedVHOhziBVRu/HkoVeHh4eEd5VUx1a2oeEnol5lfvv8LDw8OL3+irDQF5u1U17e5tvz0o8PDw8I7yeq/91SFOnpD8GZdn8PDw8BZ4eXjotRFMttmS5qrCL+Lh4eGt8aohoYpMglA1ZW+m13h4eHgD3iTxzQNG9Zpqu8Dl8/Hw8PCO8k4VC5J78/aCPNg8BAY8PDy8BV5veylnbBRn8xCFh4eHt8HL26F62/n5QOeT+/CugIeHh3eUNy/O5ptbeS9YNR0vRBs8PDy8BV4Vlpdu86kpMK7uxcPDw1vgTUoGeco7uSYvHD9MIh4eHt5RXrWU0CsQTFq4qrxXHtnw8PDwirweJik3TL6dTMofTVd4eHh4R3nVdDkfdN5yWm1NaBaa8fDw8BZ48wQ6X+h7T65OCh4eHt4Gr7egn0X2NtgK3Qp4eHh4R3nVRTxfrHuYeWsXHh4e3jZvUkSo4u9T4V4y/TAFeHh4eAu85CV/MjXVkkcvjY4aCPDw8PAO8b6KxyQdr6bavbJFsx8BDw8P72ipIklh80ar3pmkuaG814eHh4c34PUW5WSB7jUKHC4B4+Hh4a3xkpf8PM5MShu9ey+nGw8PD++tvF6enrdnTdL3y2vw8PDw3sqbbFndJ8F5KEpKFaO4h4eHhxfz9jaoemWLvKD8QMXDw8Nb4OUPTRjzHfw8yT7WTICHh4eX8r4BndmmS+bSwdUAAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/27/设计原则与设计模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计原则与设计模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -276,320 +336,57 @@ var _hmt = _hmt || [];
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-设计原则与设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/27/设计原则与设计模式/">设计原则与设计模式</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/27/设计原则与设计模式/" class="archive-article-date">
-  	<time datetime="2020-05-27T10:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>六大设计原则与二十三种设计模式。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计思想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/27/设计原则与设计模式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、what"><span class="toc-number">1.</span> <span class="toc-text">一、what</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、why"><span class="toc-number">2.</span> <span class="toc-text">二、why</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、how"><span class="toc-number">3.</span> <span class="toc-text">三、how</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-角色组成"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.角色组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-代码实现"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.代码实现</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-
   
-    <article id="post-github图床配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/27/github图床配置/">github图床配置</a>
-    </h1>
   
-
-        
-        <a href="/2020/05/27/github图床配置/" class="archive-article-date">
-  	<time datetime="2020-05-27T06:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何用github搭建一个免费的图片存储仓库？</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图床</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/27/github图床配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-kafka安装及使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/20/kafka安装及使用/">kafka安装及使用</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/20/kafka安装及使用/" class="archive-article-date">
-  	<time datetime="2020-05-20T05:58:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>单机kafka的部署过程记录。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">kafka</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/20/kafka安装及使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-hexo基本操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/11/hexo基本操作/">hexo的基本操作</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/11/hexo基本操作/" class="archive-article-date">
-  	<time datetime="2019-11-11T09:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> hexo是一个很简洁的博客框架，拥有很多主题，很适合用作个人博客，在此记录一下基本用法。</p>
-<p>官方文档地址： <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a> </p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/11/hexo基本操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
 
   
   
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '17fb7ed2646169e20d8f',
+  	clientSecret: '19426765ecbd5c3489d0ad82515b833e4c6a814a',
+  	repo: 'qinbo1022.github.io',
+  	owner: 'qinbo1022',
+  	admin: ['qinbo1022'],
+  	id: 'Fri May 29 2020 16:11:08 GMT+0800',
+  	distractionFreeMode: 'false'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+  
+
+
+  
+
 
 
           </div>
@@ -611,8 +408,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
