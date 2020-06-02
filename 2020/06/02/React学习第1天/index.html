@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>Archives: 2019/11 | bobo的鬼屋</title>
+  <title>React学习 - day1 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java后端Boy">
-<meta name="keywords" content="代码">
-<meta property="og:type" content="website">
-<meta property="og:title" content="bobo的鬼屋">
-<meta property="og:url" content="//blog.qinbo.top/archives/2019/11/index.html">
+  <meta name="description" content="React学习day01。">
+<meta name="keywords" content="React,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React学习 - day1">
+<meta property="og:url" content="//blog.qinbo.top/2020/06/02/React学习第1天/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="Java后端Boy">
+<meta property="og:description" content="React学习day01。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-02T10:17:36.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bobo的鬼屋">
-<meta name="twitter:description" content="Java后端Boy">
+<meta name="twitter:title" content="React学习 - day1">
+<meta name="twitter:description" content="React学习day01。">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -156,60 +157,267 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-React学习第1天" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/11/hexo基本操作/" class="archive-article-date">
-  	<time datetime="2019-11-11T09:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/11/hexo基本操作/">hexo的基本操作</a>
+    <h1 class="article-title" itemprop="name">
+      React学习 - day1
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/02/React学习第1天/" class="archive-article-date">
+  	<time datetime="2020-06-02T02:51:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>React学习day01。</p>
+<a id="more"></a>
+<h3 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h3><ol>
+<li>JSX概念</li>
+<li>元素渲染</li>
+<li>组件 &amp; props 概念</li>
+<li>State &amp; 生命周期 概念</li>
+</ol>
+<h3 id="JSX的概念"><a href="#JSX的概念" class="headerlink" title="JSX的概念"></a>JSX的概念</h3><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p>这种标签语法是Javascript的扩展语法，被称之为JSX，它可以描述出UI被渲染的本质形式，不属于React，但建议在React中使用它。</p>
+<h4 id="React为什么用JSX？"><a href="#React为什么用JSX？" class="headerlink" title="React为什么用JSX？"></a>React为什么用JSX？</h4><p> React 并没有采用将<u>标记与逻辑进行分离到不同文件</u>这种人为地分离方式，而是通过将二者共同存放在称之为“组件”的松散耦合单元之中，来实现<a href="[https://zh.wikipedia.org/wiki/%E5%85%B3%E6%B3%A8%E7%82%B9%E5%88%86%E7%A6%BB](https://zh.wikipedia.org/wiki/关注点分离"><em>关注点分离</em></a> )。 </p>
+<h4 id="在-JSX-中嵌入表达式"><a href="#在-JSX-中嵌入表达式" class="headerlink" title="在 JSX 中嵌入表达式"></a>在 JSX 中嵌入表达式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const name = &apos;BOBO&apos;;</span><br><span class="line">const element = &lt;h1&gt;Hello, &#123;name&#125;&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p> 在 JSX 语法中，你可以在大括号内放置任何有效的Javascript表达式。 例如，<code>2 + 2</code>，<code>user.firstName</code> 或 <code>formatName(user)</code> 都是有效的 JavaScript 表达式。 </p>
+<h4 id="JSX的特定属性"><a href="#JSX的特定属性" class="headerlink" title="JSX的特定属性"></a>JSX的特定属性</h4><p>你可以通过使用引号，来将属性值指定为字符串字面量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;div tabIndex=&quot;0&quot;&gt;&lt;/div&gt;;</span><br></pre></td></tr></table></figure>
+<p>也可以使用大括号，来在属性值中插入一个 JavaScript 表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;img src=&#123;user.avatarUrl&#125;&gt;&lt;/img&gt;;</span><br></pre></td></tr></table></figure>
+<p> 在属性中嵌入 JavaScript 表达式时，不要在大括号外面加上引号。你应该仅使用引号（对于字符串值）或大括号（对于表达式）中的一个，对于同一属性不能同时使用这两种符号。 </p>
+<p>假如一个标签里面没有内容，你可以使用 <code>/&gt;</code> 来闭合标签，就像 XML 语法一样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</span><br></pre></td></tr></table></figure>
+<p>JSX 标签里能够包含很多子元素:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const element = (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Hello!&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;Good to see you here.&lt;/h2&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="JSX渲染对象"><a href="#JSX渲染对象" class="headerlink" title="JSX渲染对象"></a>JSX渲染对象</h4><p>Babel 会把 JSX 转译成一个名为 <code>React.createElement()</code> 函数调用。</p>
+<p>以下两种示例代码完全等效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const element = (</span><br><span class="line">  &lt;h1 className=&quot;greeting&quot;&gt;</span><br><span class="line">    Hello, world!</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">);</span><br><span class="line">const element = React.createElement(</span><br><span class="line">  &apos;h1&apos;,</span><br><span class="line">  &#123;className: &apos;greeting&apos;&#125;,</span><br><span class="line">  &apos;Hello, world!&apos;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><code>React.createElement()</code> 会预先执行一些检查，以帮助你编写无错代码，但实际上它创建了一个这样的对象【虚拟Dom树】：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 这是简化过的结构</span><br><span class="line">const element = &#123;</span><br><span class="line">  type: &apos;h1&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: &apos;greeting&apos;,</span><br><span class="line">    children: &apos;Hello, world!&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这些对象被称为 “React 元素”，实际上就是一个json对象。它们描述了你希望在屏幕上看到的内容，将每一个下级元素以json的子类表示出来。React 通过读取这些对象，然后使用它们来构建 DOM 以及保持随时更新。</p>
+<h3 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h3><p>元素定义：元素是构成react的最小单位，组件是由元素构成的。</p>
+<h4 id="将元素渲染成一个DOM"><a href="#将元素渲染成一个DOM" class="headerlink" title="将元素渲染成一个DOM"></a>将元素渲染成一个DOM</h4><p>想要将一个 React 元素渲染到根 DOM 节点中，只需把它们一起传入 <code>ReactDOM.render()</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;</span><br><span class="line">ReactDOM.render(element, document.getElementById(&apos;root&apos;));</span><br></pre></td></tr></table></figure>
+<h4 id="更新已被渲染的元素"><a href="#更新已被渲染的元素" class="headerlink" title="更新已被渲染的元素"></a>更新已被渲染的元素</h4><p>React 元素是不可变对象。一旦被创建，就无法更改它的子元素或者属性。一个元素就像电影的单帧：它代表了某个特定时刻的 UI。</p>
+<p>根据我们已有的知识，更新 UI 唯一的方式是创建一个全新的元素，并将其传入 <code>ReactDOM.render()</code>。</p>
+<blockquote>
+<p><strong>注意：</strong> 在实践中，大多数 React 应用只会调用一次 <code>ReactDOM.render()</code>。</p>
+</blockquote>
+<p>React DOM 会将元素和它的子元素与它们之前的状态进行比较，并只会进行必要的更新来使 DOM 达到预期的状态。 </p>
+<p>尽管每一秒我们都会新建一个描述整个 UI 树的元素，React DOM 只会更新实际改变了的内容。 </p>
+<h3 id="组件-amp-props"><a href="#组件-amp-props" class="headerlink" title="组件 &amp; props"></a>组件 &amp; props</h3><blockquote>
+<p> 组件允许你将 UI 拆分为独立可复用的代码片段，并对每个片段进行独立构思。 </p>
+</blockquote>
+<p>组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 </p>
+<h4 id="组件定义方式"><a href="#组件定义方式" class="headerlink" title="组件定义方式"></a>组件定义方式</h4><p>1.函数式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.class式【ES6写法】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Welcome extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面两种方式是等效的。</p>
+<h4 id="自定义组件及渲染方式"><a href="#自定义组件及渲染方式" class="headerlink" title="自定义组件及渲染方式"></a>自定义组件及渲染方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p> 当 React 元素为用户自定义组件时，它会将 JSX 所接收的属性（attributes）以及子组件（children）转换为单个对象传递给组件，这个对象被称之为 “props”。 </p>
+<h4 id="组件拆分提取"><a href="#组件拆分提取" class="headerlink" title="组件拆分提取"></a>组件拆分提取</h4><p><strong>Question：为什么要提取组件？什么情况下提取组件？</strong></p>
+<p>Answer1： 提取组件可能是一件繁重的工作，但是，在大型应用中，构建可复用组件库是完全值得的。</p>
+<p>Answer2： 根据经验来看，如果 UI 中有一部分被多次使用（<code>Button</code>，<code>Panel</code>，<code>Avatar</code>），或者组件本身就足够复杂（<code>App</code>，<code>FeedStory</code>，<code>Comment</code>），那么它就是一个可复用组件的候选项。 </p>
+<p>案例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function Comment(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;Comment&quot;&gt;</span><br><span class="line">      &lt;div className=&quot;UserInfo&quot;&gt;</span><br><span class="line">        &lt;img className=&quot;Avatar&quot;</span><br><span class="line">          src=&#123;props.author.avatarUrl&#125;</span><br><span class="line">          alt=&#123;props.author.name&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;div className=&quot;UserInfo-name&quot;&gt;</span><br><span class="line">          &#123;props.author.name&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-text&quot;&gt;</span><br><span class="line">        &#123;props.text&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-date&quot;&gt;</span><br><span class="line">        &#123;formatDate(props.date)&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该组件用于描述一个社交媒体网站上的评论功能，它接收 <code>author</code>（对象），<code>text</code> （字符串）以及 <code>date</code>（日期）作为 props。 </p>
+<p>在这个组件中，人员信息是可被复用的，而人员信息中的头像信息也是可以复用的，所以这里我们将这两部分提取出来。</p>
+<blockquote>
+<p>通常来说，每个新的 React 应用程序的顶层组件都是 <code>App</code> 组件。但是，如果你将 React 集成到现有的应用程序中，你可能需要使用像 <code>Button</code> 这样的小组件，并自下而上地将这类组件逐步应用到视图层的每一处。 </p>
+</blockquote>
+<p>根据自下而上的原则，我们先提取头像组件<code>Avatar</code>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Avatar(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;img className=&quot;Avatar&quot;</span><br><span class="line">      src=&#123;props.user.avatarUrl&#125;</span><br><span class="line">      alt=&#123;props.user.name&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>继而提取人员信息<code>UserInfo</code>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function UserInfo(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;UserInfo&quot;&gt;</span><br><span class="line">      &lt;Avatar user=&#123;props.user&#125; /&gt;</span><br><span class="line">      &lt;div className=&quot;UserInfo-name&quot;&gt;</span><br><span class="line">        &#123;props.user.name&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里可以看到，UserInfo组件是直接引用的Avatar组件。</p>
+<p>简化后的<code>Comment</code>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Comment(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;Comment&quot;&gt;</span><br><span class="line">      &lt;UserInfo user=&#123;props.author&#125; /&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-text&quot;&gt;</span><br><span class="line">        &#123;props.text&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-date&quot;&gt;</span><br><span class="line">        &#123;formatDate(props.date)&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Props-的只读性"><a href="#Props-的只读性" class="headerlink" title="Props 的只读性"></a>Props 的只读性</h4><p> 组件无论是使用函数声明还是通过 class 声明，都决不能修改自身的 props，React 非常灵活，但它也有一个严格的规则：</p>
+<blockquote>
+<p>所有 React 组件都必须像<strong>纯函数</strong>一样保护它们的 props 不被更改。</p>
+</blockquote>
+<p>纯函数的定义： 函数不会尝试更改入参，且多次调用下相同的入参始终返回相同的结果。 </p>
+<p><strong>引申问题</strong>：应用程序的 UI 是动态的，并会伴随着用户操作而不断变化，那么怎么实现在props不被更改的情况下实现动态刷新？</p>
+<h3 id="State-amp-生命周期"><a href="#State-amp-生命周期" class="headerlink" title="State &amp; 生命周期"></a>State &amp; 生命周期</h3><p>state是局部变量，依赖于class组件，在构造函数中为state赋初始值。</p>
+<p>调用 <code>this.setState()</code> 来可以进行一次 UI 更新， 得益于 <code>setState()</code> 的调用，React 能够知道 state 已经改变了，然后会重新调用 <code>render()</code> 方法来确定页面上该显示什么。 </p>
+<p><strong>生命周期方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    //挂载</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillUnmount() &#123;</span><br><span class="line">    //卸载</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 当组件的输出被插入到 DOM 中后，React 就会调用 <code>ComponentDidMount()</code> 生命周期方法。 </p>
+<p>当组件从 DOM 中被移除，React 就会调用 <code>componentWillUnmount()</code> 生命周期方法。</p>
+<p><strong>State的更新会被合并</strong></p>
+<p> 当你调用 <code>setState()</code> 的时候，React 会把你提供的对象合并到当前的 state。当要合并的属性已存在的时候，会直接覆盖，被完整替换。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aOXLDMBAEQP3/03TqRPLMgnIVgUbk0kU0gvUeeL3idb1Zv99998l3v/b5u69vLAwMjMcyro8r+Uy+3fz3871hYGCcw8jDYvKt5N3PYTffGwYGBkbCaLfeJpoYGBgYs1Iz57XFMAYGBsZKEZtvN08Z81B+Wy2OgYHxQEbedf//v78y38DAwHgU4yrX5wCaJIL5MRW7wsDA2Jrx7cSuDeJ52oeBgXEmow2Xs8sZSchuRw4YGBh7M9oHJw+7q9FftPwwMDC2ZrQNtbZZv1IGDwcAGBgY2zHaQLn+Ss5LjhsDA+MERl3vls24NpVcGm1iYGBsypiFtvXBZzvy/OOyGgYGxjGMdtNtLdkmlHlyiYGBcQJjhlnJRpNWWlH6YmBgHMOYNejzIWgyGMhHlRgYGKcx8gRupa3fjjOLHWJgYGzNaFtgbeMsT/hWAj0GBsbejDaxmyWC12gVpSwGBsbWjFmql7fJ2vRx6RcwMDAOYyQJ4iz5Sw5ueOMLAwPjGMZ6BGvx6wkiBgYGRnJhIr9yMbucER0KBgbGpoxZC2x25aINynkyioGBsTcjX+0AoH2lDcrJ4WJgYOzEaMvItiXXpp7DPWBgYBzASBK+Gx5WjhlyJAYGBsbKFYpZmdq2/zAwMDDaUnN2kaK9mnbb/w0MDIyHMJIidvaA/DJZnixiYGCcxshLx3sHlvlhrZe+GBgYj2X8ALLRN/WokZDnAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/05/29/设计模式之建造者模式（1-23）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式之建造者模式（1/23）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习目标"><span class="toc-number">1.</span> <span class="toc-text">学习目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSX的概念"><span class="toc-number">2.</span> <span class="toc-text">JSX的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React为什么用JSX？"><span class="toc-number">2.1.</span> <span class="toc-text">React为什么用JSX？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在-JSX-中嵌入表达式"><span class="toc-number">2.2.</span> <span class="toc-text">在 JSX 中嵌入表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX的特定属性"><span class="toc-number">2.3.</span> <span class="toc-text">JSX的特定属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX渲染对象"><span class="toc-number">2.4.</span> <span class="toc-text">JSX渲染对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元素渲染"><span class="toc-number">3.</span> <span class="toc-text">元素渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#将元素渲染成一个DOM"><span class="toc-number">3.1.</span> <span class="toc-text">将元素渲染成一个DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新已被渲染的元素"><span class="toc-number">3.2.</span> <span class="toc-text">更新已被渲染的元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件-amp-props"><span class="toc-number">4.</span> <span class="toc-text">组件 &amp; props</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#组件定义方式"><span class="toc-number">4.1.</span> <span class="toc-text">组件定义方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义组件及渲染方式"><span class="toc-number">4.2.</span> <span class="toc-text">自定义组件及渲染方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件拆分提取"><span class="toc-number">4.3.</span> <span class="toc-text">组件拆分提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Props-的只读性"><span class="toc-number">4.4.</span> <span class="toc-text">Props 的只读性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#State-amp-生命周期"><span class="toc-number">5.</span> <span class="toc-text">State &amp; 生命周期</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '17fb7ed2646169e20d8f',
+  	clientSecret: '19426765ecbd5c3489d0ad82515b833e4c6a814a',
+  	repo: 'qinbo1022.github.io',
+  	owner: 'qinbo1022',
+  	admin: ['qinbo1022'],
+  	id: 'Tue Jun 02 2020 10:51:45 GMT+0800',
+  	distractionFreeMode: 'false'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+  
+
+
+  
+
 
 
           </div>
@@ -232,8 +440,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
