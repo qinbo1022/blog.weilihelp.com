@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//blog.qinbo.top/2020/06/02/React%E5%AD%A6%E4%B9%A0%E7%AC%AC1%E5%A4%A9/</loc>
+    <loc>//blog.qinbo.top/2020/06/03/React%E5%AD%A6%E4%B9%A0-day02/</loc>
     
-    <lastmod>2020-06-02T10:17:36.411Z</lastmod>
+    <lastmod>2020-06-03T11:41:17.407Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//blog.qinbo.top/2020/06/02/React%E5%AD%A6%E4%B9%A0-day01/</loc>
+    
+    <lastmod>2020-06-02T10:23:24.016Z</lastmod>
     
   </url>
   

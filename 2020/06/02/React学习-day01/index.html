@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>设计原则与设计模式 | bobo的鬼屋</title>
+  <title>React学习 - day1 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="六大设计原则与二十三种设计模式。">
-<meta name="keywords" content="设计模式,设计思想">
+  <meta name="description" content="React学习day01。">
+<meta name="keywords" content="React,学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计原则与设计模式">
-<meta property="og:url" content="//blog.qinbo.top/2020/05/27/设计原则与设计模式/index.html">
+<meta property="og:title" content="React学习 - day1">
+<meta property="og:url" content="//blog.qinbo.top/2020/06/02/React学习-day01/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="六大设计原则与二十三种设计模式。">
+<meta property="og:description" content="React学习day01。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-28T10:52:47.451Z">
+<meta property="og:updated_time" content="2020-06-02T10:23:24.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计原则与设计模式">
-<meta name="twitter:description" content="六大设计原则与二十三种设计模式。">
+<meta name="twitter:title" content="React学习 - day1">
+<meta name="twitter:description" content="React学习day01。">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -157,153 +157,107 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-设计原则与设计模式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-React学习-day01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      设计原则与设计模式
+      React学习 - day1
     </h1>
   
 
         
-        <a href="/2020/05/27/设计原则与设计模式/" class="archive-article-date">
-  	<time datetime="2020-05-27T10:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
+        <a href="/2020/06/02/React学习-day01/" class="archive-article-date">
+  	<time datetime="2020-06-02T02:51:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>六大设计原则与二十三种设计模式。</p>
+        <p>React学习day01。</p>
 <a id="more"></a>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>设计模式是在软件工程实践过程中，程序员们总结出的良好的编程方法，为了代码可重用性、增加可维护性，让代码更容易被他人理解、保证代码可靠性。设计模式使代码编写真正工程化。</p>
-<p> 我们学设计模式，是为了学习<strong>如何合理的组织我们的代码，如何解耦，如何真正的达到对修改封闭对扩展开放的效果</strong>，而不是去背诵那些类的继承模式，然后自己记不住，回过头来就骂设计模式把你的代码搞复杂了 。</p>
-<h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><ul>
-<li>单一职责原则：每个类应该实现单一的职责，否则应该把类拆分。</li>
-<li>里氏替换原则：任何基类可以出现的地方，子类一定可以出现。它是继承复用的基石，只有当衍生类可以替换掉基类，软件单位的功能不受影响时，基类才能真正被复用，而衍生类也能够在基类的基础上增加新的行为。</li>
-<li>依赖倒转原则：这是开闭原则的基础，对接口编程，依赖于抽象而不依赖于具体。</li>
-<li>接口隔离原则：使用多个隔离的接口，比使用单个接口要好。每个接口不存在子类用不到却必须实现的方法，否则要将接口拆分。</li>
-<li>迪米特法则（最少知道原则）：一个实体应当尽量少的与其他实体之间发生相互作用，使得系统的功能模块相对独立。</li>
-<li>合成复用原则：尽量使用合成/聚合方式，而不是使用继承。</li>
-</ul>
-<h3 id="设计模式分类"><a href="#设计模式分类" class="headerlink" title="设计模式分类"></a>设计模式分类</h3><p>设计模式分为三大类：</p>
-<ul>
-<li>创建型模式（5）<ul>
-<li>工厂方法模式 </li>
-<li>抽象工厂模式</li>
-<li>单例模式 </li>
-<li>建造者模式 </li>
-<li>原型模式 （简单工厂模式）</li>
-</ul>
-</li>
-<li>结构型模式：（7）<ul>
-<li>代理模式</li>
-<li>装饰器模式</li>
-<li>适配器模式</li>
-<li>外观模式</li>
-<li>组合模式</li>
-<li>享元模式</li>
-<li>桥接模式</li>
-</ul>
-</li>
-<li>行为型模式：（11）<ul>
-<li>观察者模式</li>
-<li>责任链模式</li>
-<li>模板方法模式</li>
-<li>策略模式</li>
-<li>迭代子模式</li>
-<li>命令模式</li>
-<li>状态模式</li>
-<li>备忘录模式</li>
-<li>访问者模式</li>
-<li>中介者模式</li>
-</ul>
-</li>
-</ul>
-<h3 id="设计模式概述"><a href="#设计模式概述" class="headerlink" title="设计模式概述"></a>设计模式概述</h3><h4 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h4><p>简单工厂模式并不属于23种模式中的一种，但是还是很有必要了解一下。<br>简单工厂模式：有一个工厂类，在工厂类中进行判断，创建需要的功能类。</p>
-<p>不必使用具体的功能类去创建该类的实例，创建实例的操作交给工厂类去完成。但是，当需要增加一个新的功能类的时候，就需要在工厂类中增加一个判断。</p>
-<h4 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h4><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法模式使一个类的实例化延迟到子类。</p>
-<p>当新增加一个类的时候，不需要对工厂类进行修改，但是当新增一个功能类的时候，需要创建对应的工厂类。这样，就会创建过多的类，不如策略模式。</p>
-<h4 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h4><p>提供一个创建一系列相关或者相互依赖对象的接口，而无需指定它们具体的类。</p>
-<p>抽象工厂模式是工厂方法模式的升级版本。它用来创建一组相关或者相互依赖的对象。<br>与工厂方法模式的区别：工厂方法模式针对的是一个产品等级结构，而抽象工厂模式针对的是多个产品等级结构。通常，一个产品结构表现为抽象类或者接口，抽象工厂模式所提供的产品衍生自不同的接口或者抽象类。</p>
-<h5 id="工厂方法模式："><a href="#工厂方法模式：" class="headerlink" title="工厂方法模式："></a>工厂方法模式：</h5><p>一个抽象产品类，可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类，只能创建一个具体产品类的实例。</p>
-<h5 id="抽象工厂模式："><a href="#抽象工厂模式：" class="headerlink" title="抽象工厂模式："></a>抽象工厂模式：</h5><p>多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类，可以创建多个具体产品类的实例。也就是创建一个产品家族下的多个产品。</p>
-<p>例子：工厂可以生产鼠标和键盘，但是微软和罗技都有这两个产品。那么，微软和罗技就可以看成是两个产品族，分别由A工厂和B工厂生产各自的鼠标和键盘。A和B对应于抽象工厂，每个工厂生产的鼠标和键盘对应于工厂方法。<br>如果使用工厂方法模式，只要替换生成键盘的工厂方法就可以把键盘从罗技换到微软。<br>但是使用了抽象工厂模式，只要换家工厂，就可以同时换鼠标和键盘。如果需要的产品（鼠标 键盘..）有很多，使用抽象工厂模式一次性替换很方便。</p>
-<h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。<br>有懒汉和饿汉两种模式，同时要注意线程安全的写法。</p>
-<p>应用：对于无状态的类使用单例模式，节省内存资源。<br>Servlet中的实例就是单例模式，但是是多线程。<br>Spring中创建的Bean对象默认是单例模式，这样就不用为每个请求创建一个实例对象，减少性能开销。但是Struts2中的Action是多例模式，针对每个请求都会创建一个实例，因此是线程安全的。</p>
-<h4 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h4><p>将一个复杂对象的创建与它的表示分离，使得同样的创建过程可以创建不同的表示。</p>
-<p>需要建造者，还需要一个指挥者，负责整体的构建算法，也就是如何去组合产品。</p>
-<p>应用：一个类的各个组成部分的具体实现类或者算法经常变化，但是将它们组合在一起的算法却相对稳定。提供一种封装机制将稳定的组合算法于易变的各个组成部分隔离开来。</p>
-<h4 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h4><p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。<br>简单的说，就是从一个对象再创建另外一个可定制的对象，而且不需要知道任何创建的细节。</p>
-<p>应用：如Object中的clone方法，需要该类实现Cloneable接口，注意这是浅表复制。如果想实现深表复制，可以将引用的对象也实现Cloneable接口，重写clone方法；或采用序列化，也就是采用流的方式读入当前对象的二进制输入，再写出二进制数据对应的对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 写入当前对象的二进制流 */</span>  </span><br><span class="line">ByteArrayOutputStream bos = <span class="keyword">new</span> ByteArrayOutputStream();  </span><br><span class="line">ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(bos);  </span><br><span class="line">oos.writeObject(<span class="keyword">this</span>);  </span><br><span class="line"><span class="comment">/* 读出二进制流产生的新对象 */</span>  </span><br><span class="line">ByteArrayInputStream bis = <span class="keyword">new</span> ByteArrayInputStream(bos.toByteArray());  </span><br><span class="line">ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(bis);  </span><br><span class="line"><span class="keyword">return</span> ois.readObject();</span><br></pre></td></tr></table></figure>
-<h4 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h4><p>为其他对象提供一种代理，以控制对这个对象的访问。<br>代理对象和被代理对象需要实现相同的接口，这样代理类才能完成代理工作。</p>
-<h4 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h4><p>动态的给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更加灵活。</p>
-<p>装饰对象和被装饰对象需要实现共同的接口，这样可以层层装饰。<br>在客户端创建被装饰的对象，然后作为构造参数传给装饰对象。</p>
-<p>应用：当系统需要新的功能，向旧的类中添加新的代码。<br>Java的IO中，BufferedReader(new InputStreamReader(System.in)就是一个装饰模式。</p>
-<p>装饰模式与代理模式的区别：装饰模式关注于在一个对象上动态的添加方法，代理模式关注于控制对象的访问。对于客户端来说，代理模式中，客户端不需要知道被代理对象的信息，被代理的对象是在代理类中完成了一个实例的创建。而装饰模式中，需要在客户端中将原始对象作为一个参数传给装饰者模式。</p>
-<h4 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h4><p>将一个类的接口转换成用户希望的另外一种接口，使得原本由于接口不兼容而不能一起工作的类可以一起工作。</p>
-<p>适配器模式主要是希望复用一些现有的类，但接口与复用环境要求不一致的情况。</p>
-<p>应用：系统的数据和行为都正确时，但是接口不符合，应该用适配器。</p>
-<h4 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h4><p>为子系统的一组接口提供一致的界面，此模式定义了一个高层的接口，这个接口使得这一子系统更加容易使用。</p>
-<p>应用：比如在MVC架构中，Action层 Service层和Dao层就是外观模式。Service层中的方法可能会需要多个Dao层中的方法结合使用，这样将这些方法封装起来，向Action层提供一系列简单的接口，使得Action层的代码更加简洁和清晰。<br>Tomcat中也使用了外观模式，Tomcat中的每个组件都要相互通信，但是不能将自己内部的数据过多的暴露给其他组件，使用外观模式进行隔离数据。实际上传递的是RequestFacade和ResponseFacade对象，只提供外部程序感兴趣的方法。</p>
-<p>外观模式与代理模式的区别：<br>代理模式是代理一个单一的对象，而外观模式代表一个子系统。<br>组合模式<br>将对象组合成树形结构以表示 部分—整体的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。</p>
-<p>对于客户端来说，无需区分是操作的是树枝对象还是树叶对象。</p>
-<p>应用：文件系统</p>
-<h4 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h4><p>运用共享技术有效的支持大量细粒度的对象。</p>
-<p>实现对象的共享，当系统中对象多的时候可以减少内存的开销，通常与工厂模式一起使用。</p>
-<p>FlyWeightFactory负责创建和管理享元单元，当一个客户端请求时，工厂需要检查当前对象池中是否有符合条件的对象，如果有，则返回已经存在的对象，如果没有，则创建一个新的对象。</p>
-<p>应用：String类型就是享元模式，对象一旦创建，就不能改变，存放于常量池中。<br>数据库连接池，url driverClassName username password dbname这些对于每个连接来说都是一样的，所以适合用享元模式处理。通过连接池的管理，实现了数据库连接的共享，不需要每一次都创建新的连接，节省了数据库重新创建的开销，提升了系统的性能。</p>
-<h4 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h4><p>将抽象部分与它的实现部分分离，使它们都可以独立的变化。</p>
-<p>应用：在JDBC中，使用了桥接模式。对于应用程序而言，只要选择不同的驱动方式，就可以让程序操作不同的数据库，而无需更改应用程序，对于数据库而言，为数据库实现不同的驱动程序，并不会影响应用程序。</p>
-<p>行为型模式</p>
-<h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><p>也是发布—订阅模式，是一种一对多的依赖关系。让多个观察者对象同时监听某一个主题对象，这个主题对象发生变化时，会通知所有观察者对象，使得它们可以自动更新自己。</p>
-<p>将一个系统分割成一系列相互合作的类有不好的作用，那就是需要维护相关对象间的一致性。不希望为了维护一致性而使各类紧密耦合，这样会给维护 扩展 重用带来不变。</p>
-<p>应用：util库中有Observale和Observer接口，被观察对象集成Observable类，Watcher对象实现Observer接口。</p>
-<p>Spring中的事件驱动模型是观察者模式的一个典型应用。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationEvent</span> <span class="keyword">extends</span> <span class="title">EventObject</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">7099057708183571937L</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">long</span> timestamp;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationEvent</span><span class="params">(Object source)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(source);</span><br><span class="line">        <span class="keyword">this</span>.timestamp = System.currentTimeMillis();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">long</span> <span class="title">getTimestamp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.timestamp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ApplicationEvent继承自jdk的EventObject,所有的事件都需要继承ApplicationEvent,并且通过source得到事件源.该类的实现类ApplicationContextEvent表示ApplicaitonContext的容器事件.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApplicationListener</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">ApplicationEvent</span>&gt; <span class="keyword">extends</span> <span class="title">EventListener</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onApplicationEvent</span><span class="params">(E event)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ApplicationListener继承自jdk的EventListener,所有的监听器都要实现这个接口,这个接口只有一个onApplicationEvent()方法,该方法接受一个ApplicationEvent或其子类对象作为参数,在方法体中,可以通过不同对Event类的判断来进行相应的处理.当事件触发时所有的监听器都会收到消息,如果你需要对监听器的接收顺序有要求,可是实现该接口的一个实现SmartApplicationListener,通过这个接口可以指定监听器接收事件的顺序.</p>
-<p>事件机制需要事件源 事件 事件监听器。ApplicationEvent相当于事件， ApplicationListener相当于事件监听器，事件源是ApplicationContext。ApplicationContext是spring中的全局容器，负责读取bean的配置文档，管理bean的加载，维护bean之间的依赖关系。ApplicationContext作为一个事件源，需要显示的调用publishEvent方法，传入一个ApplicationEvent的实现类对象作为参数，每当ApplicationContext发布ApplicationEvent时，所有的ApplicationListener就会被自动触发。<br>ApplicationContext接口实现了ApplicationEventPublisher接口，里面有一个发布事件的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApplicationEventPublisher</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">publishEvent</span><span class="params">(ApplicationEvent event)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们常用的ApplicationContext都继承了AbstractApplicationContext,像我们平时常见的ClassPathXmlApplicationContext、XmlWebApplicationContex也都是继承了它,AbstractApplicationcontext是ApplicationContext接口的抽象实现类,在该类中实现了publishEvent方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">publishEvent</span><span class="params">(ApplicationEvent event)</span> </span>&#123;</span><br><span class="line">    Assert.notNull(event, <span class="string">"Event must not be null"</span>);</span><br><span class="line">    <span class="keyword">if</span> (logger.isTraceEnabled()) &#123;</span><br><span class="line">        logger.trace(<span class="string">"Publishing event in "</span> + getDisplayName() + <span class="string">": "</span> + event);</span><br><span class="line">    &#125;</span><br><span class="line">    getApplicationEventMulticaster().multicastEvent(event);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.parent != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.parent.publishEvent(event);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这个方法中,我们看到了一个getApplicationEventMulticaster().这就要牵扯到另一个类ApplicationEventMulticaster.<br>ApplicationEventMulticaster属于事件广播器，作用就是把ApplicationContext发布的Event广播给所有的监听器。<br>在AbstractApplicationcontext中有一个applicationEventMulticaster的成员变量,提供了监听器Listener的注册方法.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractApplicationContext</span> <span class="keyword">extends</span> <span class="title">DefaultResourceLoader</span></span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">ConfigurableApplicationContext</span>, <span class="title">DisposableBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">private</span> ApplicationEventMulticaster applicationEventMulticaster;</span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">registerListeners</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Register statically specified listeners first.</span></span><br><span class="line">        <span class="keyword">for</span> (ApplicationListener&lt;?&gt; listener : getApplicationListeners()) &#123;</span><br><span class="line">            getApplicationEventMulticaster().addApplicationListener(listener);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Do not initialize FactoryBeans here: We need to leave all regular beans</span></span><br><span class="line">        <span class="comment">// uninitialized to let post-processors apply to them!</span></span><br><span class="line">        String[] listenerBeanNames = getBeanNamesForType(ApplicationListener<span class="class">.<span class="keyword">class</span>, <span class="title">true</span>, <span class="title">false</span>)</span>;</span><br><span class="line">        <span class="keyword">for</span> (String lisName : listenerBeanNames) &#123;</span><br><span class="line">            getApplicationEventMulticaster().addApplicationListenerBean(lisName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h4><p>使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合。将这些对象链接成一条链，并沿着这条链传递该请求，直到一个对象处理为止。</p>
-<p>好处：请求是沿着链传递，直至有一个具体的处理者对象对其进行处理。这使得接收者和发送者都没有对方明确的信息，并且链中的对象也不知道链的结构。职责链可以简化对象之间的相互连接，仅需保持一个指向其后继者的调用，而不需要保持它所有的候选接收者的引用。</p>
-<p>应用：Tomcat中的Filter使用了责任链模式。<br>Tomcat的容器设置也是责任链模式。Engine-Host-Context-Wrapper都是通过一个链传递请求。</p>
-<h4 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h4><p>定义了一个操作中算法的骨架，而将一些步骤延迟到子类。模板方法使得子类可以不改变一个算法的结构就可以重新定义该算法的某些特定的步骤。</p>
-<p>将不变的行为搬移到超类中，去除子类中的重复代码来体现它的优势。</p>
-<p>应用：HttpServlet提供一个service方法，这个方法调用了7个do方法中的一个或者几个，完成对客户端的响应。这些do方法要求HttpServlet具体子类去实现。</p>
-<h4 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h4><p>定义了算法家族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化不会影响到使用算法的用户。</p>
-<p>这些算法都是完成相同的工作，只是实现不同。</p>
-<p>应用：需要在不同的时间点，应用不用的业务规则。（比如打折促销各种优惠手段）<br>迭代子模式<br>提供一种方法顺序的访问一个聚合对象中各个元素，而不是暴露该对象的内部表示。</p>
-<p>应用：当需要访问一个聚集对象时，而且不管这些对象是什么就需要遍历的时候。<br>Java中的集合。</p>
-<h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><p>将一个请求封装为一个对象，从而使你可以用不同的请求对客户 进行参数化，对请求排队或者记录请求日志时，以及支持撤销的操作。</p>
-<p>命令模式把发出命令的责任和执行命令的责任分割开来，委派给不同的对象。<br>优点：比较容易的设计一个请求队列。在需要的情况下，可以比较容易的将命令记入日志。<br>允许接收请求的一方决定是否要否决请求。比较容易的实现对请求的撤销和重做。</p>
-<h4 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h4><p>当一个对象的内存状态改变时，允许改变其行为。这个对象看起来是像改变了类。</p>
-<p>当控制一个对象状态转换的条件表达式过于复杂时的情况。把状态的判断逻辑转移到不同状态的一系列类当中，可以把复杂的判断逻辑简化。</p>
-<p>应用：当一个对象的行为取决于它的状态时，并且它必须在运行时刻根据它的状态改变它的行为时，可以考虑使用。</p>
-<h4 id="备忘录模式"><a href="#备忘录模式" class="headerlink" title="备忘录模式"></a>备忘录模式</h4><p>在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可将该对象恢复到原先保存的状态。</p>
-<p>应用：适应于功能比较复杂，但需要维护或记录属性历史的类。（游戏进度）</p>
-<h4 id="访问者模式"><a href="#访问者模式" class="headerlink" title="访问者模式"></a>访问者模式</h4><p>表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下，定义作用于这些元素的新操作。</p>
-<p>应用：适应于数据结构相对稳定的系统。它把数据结构和作用于结构上的操作之间的耦合解脱开，使得操作集合可以相对的自由的演化。目的是把处理从数据结构中分离出来。如果系统中有比较稳定的数据结构，又有易于变化的算法，用访问者模式。</p>
-<p>优点：增加新的操作很容易，只需要增加一个新的访问者。</p>
-<h4 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h4><p>用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显示的相互调用，从而使其耦合松散，而且可以独立的改变它们之间的交互。</p>
-<p>中介对象需要知道所有的具体同事类，从具体同事类中接收消息，向具体同事发出命令。<br>具体同事类，每个具体同事只知道自己的行为，而不了解其他同事类的情况，但它们都认识中介对象。</p>
-<p>优点：中介者模式减少了各个Colleage的耦合，使得可以独立的改变和复用各个Colleague类和Mediator。<br>缺点：交互的复杂性变为了中介者的复杂性，这使得中介者变得比任何一个类都复杂。</p>
-<p>应用：应用于一组对象以定义良好但是复杂的方式进行通信的场合。以及想定制一个分布在多个类中而又不想生成太多子类的场合。</p>
-<p>中介者模式与代理模式：<br>代理模式是一对一，这个代理只能代表一个对象。只能代理一方，比如PB是B的代理，A能够通过PB访问B，但是B不能通过PB访问A。（比如手机代理，我们只能通过手机代理去买手机）<br>中介者模式是多对多，这些被管理的对象之间都可以通信，它们的业务关系应该是交互在一起的。A可以通过中介访问B，B也能够通过中介访问A。（比如房屋中介，中介者有房源的信息也有客户的信息，可以双向进行通信）</p>
-<h4 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h4><p>给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。</p>
-<p>应用：如果一种特定类型的问题发生的频率足够高，那么就有可能值得将该问题的实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。</p>
+<h3 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h3><ol>
+<li>JSX概念</li>
+<li>元素渲染</li>
+<li>组件 &amp; props 概念</li>
+<li>State &amp; 生命周期 概念</li>
+</ol>
+<h3 id="JSX的概念"><a href="#JSX的概念" class="headerlink" title="JSX的概念"></a>JSX的概念</h3><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p>这种标签语法是Javascript的扩展语法，被称之为JSX，它可以描述出UI被渲染的本质形式，不属于React，但建议在React中使用它。</p>
+<h4 id="React为什么用JSX？"><a href="#React为什么用JSX？" class="headerlink" title="React为什么用JSX？"></a>React为什么用JSX？</h4><p> React 并没有采用将<u>标记与逻辑进行分离到不同文件</u>这种人为地分离方式，而是通过将二者共同存放在称之为“组件”的松散耦合单元之中，来实现<a href="[https://zh.wikipedia.org/wiki/%E5%85%B3%E6%B3%A8%E7%82%B9%E5%88%86%E7%A6%BB](https://zh.wikipedia.org/wiki/关注点分离"><em>关注点分离</em></a> )。 </p>
+<h4 id="在-JSX-中嵌入表达式"><a href="#在-JSX-中嵌入表达式" class="headerlink" title="在 JSX 中嵌入表达式"></a>在 JSX 中嵌入表达式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const name = &apos;BOBO&apos;;</span><br><span class="line">const element = &lt;h1&gt;Hello, &#123;name&#125;&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p> 在 JSX 语法中，你可以在大括号内放置任何有效的Javascript表达式。 例如，<code>2 + 2</code>，<code>user.firstName</code> 或 <code>formatName(user)</code> 都是有效的 JavaScript 表达式。 </p>
+<h4 id="JSX的特定属性"><a href="#JSX的特定属性" class="headerlink" title="JSX的特定属性"></a>JSX的特定属性</h4><p>你可以通过使用引号，来将属性值指定为字符串字面量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;div tabIndex=&quot;0&quot;&gt;&lt;/div&gt;;</span><br></pre></td></tr></table></figure>
+<p>也可以使用大括号，来在属性值中插入一个 JavaScript 表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;img src=&#123;user.avatarUrl&#125;&gt;&lt;/img&gt;;</span><br></pre></td></tr></table></figure>
+<p> 在属性中嵌入 JavaScript 表达式时，不要在大括号外面加上引号。你应该仅使用引号（对于字符串值）或大括号（对于表达式）中的一个，对于同一属性不能同时使用这两种符号。 </p>
+<p>假如一个标签里面没有内容，你可以使用 <code>/&gt;</code> 来闭合标签，就像 XML 语法一样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</span><br></pre></td></tr></table></figure>
+<p>JSX 标签里能够包含很多子元素:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const element = (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Hello!&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;Good to see you here.&lt;/h2&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="JSX渲染对象"><a href="#JSX渲染对象" class="headerlink" title="JSX渲染对象"></a>JSX渲染对象</h4><p>Babel 会把 JSX 转译成一个名为 <code>React.createElement()</code> 函数调用。</p>
+<p>以下两种示例代码完全等效：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const element = (</span><br><span class="line">  &lt;h1 className=&quot;greeting&quot;&gt;</span><br><span class="line">    Hello, world!</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">);</span><br><span class="line">const element = React.createElement(</span><br><span class="line">  &apos;h1&apos;,</span><br><span class="line">  &#123;className: &apos;greeting&apos;&#125;,</span><br><span class="line">  &apos;Hello, world!&apos;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><code>React.createElement()</code> 会预先执行一些检查，以帮助你编写无错代码，但实际上它创建了一个这样的对象【虚拟Dom树】：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 这是简化过的结构</span><br><span class="line">const element = &#123;</span><br><span class="line">  type: &apos;h1&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: &apos;greeting&apos;,</span><br><span class="line">    children: &apos;Hello, world!&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这些对象被称为 “React 元素”，实际上就是一个json对象。它们描述了你希望在屏幕上看到的内容，将每一个下级元素以json的子类表示出来。React 通过读取这些对象，然后使用它们来构建 DOM 以及保持随时更新。</p>
+<h3 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h3><p>元素定义：元素是构成react的最小单位，组件是由元素构成的。</p>
+<h4 id="将元素渲染成一个DOM"><a href="#将元素渲染成一个DOM" class="headerlink" title="将元素渲染成一个DOM"></a>将元素渲染成一个DOM</h4><p>想要将一个 React 元素渲染到根 DOM 节点中，只需把它们一起传入 <code>ReactDOM.render()</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;</span><br><span class="line">ReactDOM.render(element, document.getElementById(&apos;root&apos;));</span><br></pre></td></tr></table></figure>
+<h4 id="更新已被渲染的元素"><a href="#更新已被渲染的元素" class="headerlink" title="更新已被渲染的元素"></a>更新已被渲染的元素</h4><p>React 元素是不可变对象。一旦被创建，就无法更改它的子元素或者属性。一个元素就像电影的单帧：它代表了某个特定时刻的 UI。</p>
+<p>根据我们已有的知识，更新 UI 唯一的方式是创建一个全新的元素，并将其传入 <code>ReactDOM.render()</code>。</p>
 <blockquote>
-<p>参考CSDN博主「淹不死的水」的原创文章<br>原文链接：<a href="https://blog.csdn.net/stone_yw/article/details/69680916" target="_blank" rel="noopener">https://blog.csdn.net/stone_yw/article/details/69680916</a></p>
+<p><strong>注意：</strong> 在实践中，大多数 React 应用只会调用一次 <code>ReactDOM.render()</code>。</p>
 </blockquote>
+<p>React DOM 会将元素和它的子元素与它们之前的状态进行比较，并只会进行必要的更新来使 DOM 达到预期的状态。 </p>
+<p>尽管每一秒我们都会新建一个描述整个 UI 树的元素，React DOM 只会更新实际改变了的内容。 </p>
+<h3 id="组件-amp-props"><a href="#组件-amp-props" class="headerlink" title="组件 &amp; props"></a>组件 &amp; props</h3><blockquote>
+<p> 组件允许你将 UI 拆分为独立可复用的代码片段，并对每个片段进行独立构思。 </p>
+</blockquote>
+<p>组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素。 </p>
+<h4 id="组件定义方式"><a href="#组件定义方式" class="headerlink" title="组件定义方式"></a>组件定义方式</h4><p>1.函数式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.class式【ES6写法】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Welcome extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面两种方式是等效的。</p>
+<h4 id="自定义组件及渲染方式"><a href="#自定义组件及渲染方式" class="headerlink" title="自定义组件及渲染方式"></a>自定义组件及渲染方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p> 当 React 元素为用户自定义组件时，它会将 JSX 所接收的属性（attributes）以及子组件（children）转换为单个对象传递给组件，这个对象被称之为 “props”。 </p>
+<h4 id="组件拆分提取"><a href="#组件拆分提取" class="headerlink" title="组件拆分提取"></a>组件拆分提取</h4><p><strong>Question：为什么要提取组件？什么情况下提取组件？</strong></p>
+<p>Answer1： 提取组件可能是一件繁重的工作，但是，在大型应用中，构建可复用组件库是完全值得的。</p>
+<p>Answer2： 根据经验来看，如果 UI 中有一部分被多次使用（<code>Button</code>，<code>Panel</code>，<code>Avatar</code>），或者组件本身就足够复杂（<code>App</code>，<code>FeedStory</code>，<code>Comment</code>），那么它就是一个可复用组件的候选项。 </p>
+<p>案例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function Comment(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;Comment&quot;&gt;</span><br><span class="line">      &lt;div className=&quot;UserInfo&quot;&gt;</span><br><span class="line">        &lt;img className=&quot;Avatar&quot;</span><br><span class="line">          src=&#123;props.author.avatarUrl&#125;</span><br><span class="line">          alt=&#123;props.author.name&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;div className=&quot;UserInfo-name&quot;&gt;</span><br><span class="line">          &#123;props.author.name&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-text&quot;&gt;</span><br><span class="line">        &#123;props.text&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-date&quot;&gt;</span><br><span class="line">        &#123;formatDate(props.date)&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该组件用于描述一个社交媒体网站上的评论功能，它接收 <code>author</code>（对象），<code>text</code> （字符串）以及 <code>date</code>（日期）作为 props。 </p>
+<p>在这个组件中，人员信息是可被复用的，而人员信息中的头像信息也是可以复用的，所以这里我们将这两部分提取出来。</p>
+<blockquote>
+<p>通常来说，每个新的 React 应用程序的顶层组件都是 <code>App</code> 组件。但是，如果你将 React 集成到现有的应用程序中，你可能需要使用像 <code>Button</code> 这样的小组件，并自下而上地将这类组件逐步应用到视图层的每一处。 </p>
+</blockquote>
+<p>根据自下而上的原则，我们先提取头像组件<code>Avatar</code>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Avatar(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;img className=&quot;Avatar&quot;</span><br><span class="line">      src=&#123;props.user.avatarUrl&#125;</span><br><span class="line">      alt=&#123;props.user.name&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>继而提取人员信息<code>UserInfo</code>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function UserInfo(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;UserInfo&quot;&gt;</span><br><span class="line">      &lt;Avatar user=&#123;props.user&#125; /&gt;</span><br><span class="line">      &lt;div className=&quot;UserInfo-name&quot;&gt;</span><br><span class="line">        &#123;props.user.name&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里可以看到，UserInfo组件是直接引用的Avatar组件。</p>
+<p>简化后的<code>Comment</code>组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Comment(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&quot;Comment&quot;&gt;</span><br><span class="line">      &lt;UserInfo user=&#123;props.author&#125; /&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-text&quot;&gt;</span><br><span class="line">        &#123;props.text&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div className=&quot;Comment-date&quot;&gt;</span><br><span class="line">        &#123;formatDate(props.date)&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Props-的只读性"><a href="#Props-的只读性" class="headerlink" title="Props 的只读性"></a>Props 的只读性</h4><p> 组件无论是使用函数声明还是通过 class 声明，都决不能修改自身的 props，React 非常灵活，但它也有一个严格的规则：</p>
+<blockquote>
+<p>所有 React 组件都必须像<strong>纯函数</strong>一样保护它们的 props 不被更改。</p>
+</blockquote>
+<p>纯函数的定义： 函数不会尝试更改入参，且多次调用下相同的入参始终返回相同的结果。 </p>
+<p><strong>引申问题</strong>：应用程序的 UI 是动态的，并会伴随着用户操作而不断变化，那么怎么实现在props不被更改的情况下实现动态刷新？</p>
+<h3 id="State-amp-生命周期"><a href="#State-amp-生命周期" class="headerlink" title="State &amp; 生命周期"></a>State &amp; 生命周期</h3><p>state是局部变量，依赖于class组件，在构造函数中为state赋初始值。</p>
+<p>调用 <code>this.setState()</code> 来可以进行一次 UI 更新， 得益于 <code>setState()</code> 的调用，React 能够知道 state 已经改变了，然后会重新调用 <code>render()</code> 方法来确定页面上该显示什么。 </p>
+<p><strong>生命周期方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    //挂载</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillUnmount() &#123;</span><br><span class="line">    //卸载</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 当组件的输出被插入到 DOM 中后，React 就会调用 <code>ComponentDidMount()</code> 生命周期方法。 </p>
+<p>当组件从 DOM 中被移除，React 就会调用 <code>componentWillUnmount()</code> 生命周期方法。</p>
+<p><strong>State的更新会被合并</strong></p>
+<p> 当你调用 <code>setState()</code> 的时候，React 会把你提供的对象合并到当前的 state。当要合并的属性已存在的时候，会直接覆盖，被完整替换。</p>
 
       
 
@@ -317,11 +271,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计思想</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
@@ -377,7 +331,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS1LDMBAFQO5/6bCmIM57mgBlqb1yUYqt9mLQfD4+4uvx7ZqsfLYmef7owsDAuC3jcXldr5l/iLX3/vB2DAyMAxjPXpzc57Dr7V7fv9gzBgYGxrc1z/6S/CoJrBgYGBjvCrjvSmL/+f8GBgbGTRjto3NY+1F+PRfHwMC4ISMvlv39/a/0NzAwMG7FeJRXEhbzoLkWZH94DgYGxtaM9mCXb6g9LK79FgMD4zRGmy7mmOQ514E7aUtgYGDszUgel69pm5r5AEeU3GJgYGzHaAcj3ltEa9sPdS0QAwNjO0aeXubJZ16AW2tRYGBgnMbIX5Mj2/Q1+bgYGBinMdqksT0gthta+3wYGBinMdbS16To1jZH66ENDAyMTRlrBbVJqM0bBkU4xsDAOICx1lDM10+KdMWhEAMDY1NGGxDXAmVekktGxIoGJwYGxqaMSbichObRsAUGBsbWjLbE1jYv2zGOvDz35R4DA2NrRr7FteNjkqauheynkyMYGBgHMJKj2BpvHqZfrMfAwDiSsdbgbIv4ecDFwMDAyNuKyeGvBbQFweJ7YGBg3JzxKK/JgEV7QCzKcBgYGFsz1lqbayMakzbn2/q0GBgYt2WshctJ+WzeFq0PiBgYGFswirGGpTGvyYBF1KnEwMDAWHrNpIVZl/AwMDAwyjx4fihsD68YGBgnMJIkNm8S5AW4SW0fAwPjHEY74jDfXNsunae+GBgYt2V8Au1ZslB5TzQVAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3a3UoDMRAG0L7/S6/glaCN38xsxSYnV4K2m7PCMH+PR3yuz/P15+/n2d+vv+fZdz5ecTAwMN6WcS3P+pHPLp1cK2Ekd8PAwDiHkQfH9aeSoJy/lORuGBgYGPm1kqusQzMGBgbGvQE3D8RXfDAwMDDWjDykrkPtOk1MPvXyWhwDA+MNGb3BwN/8/PL5BgYGxr9nXK3TSxZ7DbjoPhgYGFsz8vTurgTurhZelIFiYGBsxKiuO8wbc2vkDWUqBgbGdoxqu61ajk6aZQUMBgbGpowkjFZDcK/cra6OYWBgnMYof6y11NV7HVHgxsDAOIZRLTXnpe9k4QwDA+McRjJ0vGvlYhKsk0ECBgbGaYz5SCC/UC8x/eG3GBgYhzGSVK8XpquDz8LLxcDA2JRRHVtOBpP3Jpo//B8wMDC2ZlQfk69HVFe7mssZGBgYWzOqqxX5g/NEM1/+KJSyGBgY2zGqQ8QcVm3x9xpzGBgYpzHyS8zTu0nY/aVriIGBsTWjGoInyd8k1Jb7eRgYGNsxJmVqNSnMn4WBgXEyoxdq86WuXjHce+kYGBj7Ma7imYww88FDEnCjtTAMDIwtGL0wlzxysoQRjQFayxwYGBjvy0iC7LzRNilloxeBgYFxAGMSZJP43QvThdIXAwMDo1WaTkhlKgYGBkbcJlsnjpOBZXMSi4GBsREj+dJqyz5hTAI3BgbGOYzJYKDayl8H4mpovm2+gYGB8X8ZHxDcIuCZ+/g+AAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -391,18 +345,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/05/29/设计模式之建造者模式（1-23）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/03/React学习-day02/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          设计模式之建造者模式（1/23）
+          React学习-day02
         
       </div>
     </a>
   
   
-    <a href="/2020/05/27/github图床配置/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">github图床配置</div>
+    <a href="/2020/05/29/设计模式之建造者模式（1-23）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式之建造者模式（1/23）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -429,7 +383,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目的"><span class="toc-number">1.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计原则"><span class="toc-number">2.</span> <span class="toc-text">设计原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式分类"><span class="toc-number">3.</span> <span class="toc-text">设计模式分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式概述"><span class="toc-number">4.</span> <span class="toc-text">设计模式概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单工厂模式"><span class="toc-number">4.1.</span> <span class="toc-text">简单工厂模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工厂方法模式"><span class="toc-number">4.2.</span> <span class="toc-text">工厂方法模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象工厂模式"><span class="toc-number">4.3.</span> <span class="toc-text">抽象工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#工厂方法模式："><span class="toc-number">4.3.1.</span> <span class="toc-text">工厂方法模式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#抽象工厂模式："><span class="toc-number">4.3.2.</span> <span class="toc-text">抽象工厂模式：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单例模式"><span class="toc-number">4.4.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#建造者模式"><span class="toc-number">4.5.</span> <span class="toc-text">建造者模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原型模式"><span class="toc-number">4.6.</span> <span class="toc-text">原型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代理模式"><span class="toc-number">4.7.</span> <span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#装饰器模式"><span class="toc-number">4.8.</span> <span class="toc-text">装饰器模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适配器模式"><span class="toc-number">4.9.</span> <span class="toc-text">适配器模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外观模式"><span class="toc-number">4.10.</span> <span class="toc-text">外观模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#享元模式"><span class="toc-number">4.11.</span> <span class="toc-text">享元模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#桥接模式"><span class="toc-number">4.12.</span> <span class="toc-text">桥接模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#观察者模式"><span class="toc-number">4.13.</span> <span class="toc-text">观察者模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#责任链模式"><span class="toc-number">4.14.</span> <span class="toc-text">责任链模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模板方法模式"><span class="toc-number">4.15.</span> <span class="toc-text">模板方法模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#策略模式"><span class="toc-number">4.16.</span> <span class="toc-text">策略模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命令模式"><span class="toc-number">4.17.</span> <span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态模式"><span class="toc-number">4.18.</span> <span class="toc-text">状态模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备忘录模式"><span class="toc-number">4.19.</span> <span class="toc-text">备忘录模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问者模式"><span class="toc-number">4.20.</span> <span class="toc-text">访问者模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中介者模式"><span class="toc-number">4.21.</span> <span class="toc-text">中介者模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释器模式"><span class="toc-number">4.22.</span> <span class="toc-text">解释器模式</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习目标"><span class="toc-number">1.</span> <span class="toc-text">学习目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSX的概念"><span class="toc-number">2.</span> <span class="toc-text">JSX的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React为什么用JSX？"><span class="toc-number">2.1.</span> <span class="toc-text">React为什么用JSX？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在-JSX-中嵌入表达式"><span class="toc-number">2.2.</span> <span class="toc-text">在 JSX 中嵌入表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX的特定属性"><span class="toc-number">2.3.</span> <span class="toc-text">JSX的特定属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX渲染对象"><span class="toc-number">2.4.</span> <span class="toc-text">JSX渲染对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元素渲染"><span class="toc-number">3.</span> <span class="toc-text">元素渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#将元素渲染成一个DOM"><span class="toc-number">3.1.</span> <span class="toc-text">将元素渲染成一个DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新已被渲染的元素"><span class="toc-number">3.2.</span> <span class="toc-text">更新已被渲染的元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件-amp-props"><span class="toc-number">4.</span> <span class="toc-text">组件 &amp; props</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#组件定义方式"><span class="toc-number">4.1.</span> <span class="toc-text">组件定义方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义组件及渲染方式"><span class="toc-number">4.2.</span> <span class="toc-text">自定义组件及渲染方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件拆分提取"><span class="toc-number">4.3.</span> <span class="toc-text">组件拆分提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Props-的只读性"><span class="toc-number">4.4.</span> <span class="toc-text">Props 的只读性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#State-amp-生命周期"><span class="toc-number">5.</span> <span class="toc-text">State &amp; 生命周期</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -460,7 +414,7 @@ if(true){
   	repo: 'qinbo1022.github.io',
   	owner: 'qinbo1022',
   	admin: ['qinbo1022'],
-  	id: 'Wed May 27 2020 18:08:33 GMT+0800',
+  	id: 'Tue Jun 02 2020 10:51:45 GMT+0800',
   	distractionFreeMode: 'false'
 })
 gitalk.render('gitalk-container') 
