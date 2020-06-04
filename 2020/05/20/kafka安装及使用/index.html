@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195532.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195422.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195326.png">
-<meta property="og:updated_time" content="2020-05-27T07:13:52.398Z">
+<meta property="og:updated_time" content="2020-06-04T10:08:00.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kafka安装及使用">
 <meta name="twitter:description" content="单机kafka的部署过程记录。">
@@ -216,37 +216,25 @@ var _hmt = _hmt || [];
 <p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195532.png" alt></p>
 <h5 id="2-配置producer-properties"><a href="#2-配置producer-properties" class="headerlink" title="2.配置producer.properties"></a>2.配置producer.properties</h5><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195422.png" alt></p>
 <h5 id="3-配置zookeeper-properties"><a href="#3-配置zookeeper-properties" class="headerlink" title="3.配置zookeeper.properties"></a>3.配置zookeeper.properties</h5><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200520195326.png" alt></p>
-<h5 id="4-启动"><a href="#4-启动" class="headerlink" title="4.启动"></a>4.启动</h5><blockquote>
-<p>bin/kafka-server-start.sh config/server.properties</p>
-</blockquote>
+<h5 id="4-启动"><a href="#4-启动" class="headerlink" title="4.启动"></a>4.启动</h5><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-<span class="keyword">server</span>-<span class="keyword">start</span>.sh config/<span class="keyword">server</span>.properties</span><br></pre></td></tr></table></figure>
 <p>执行启动命令，指定配置文件【这一步建议放到tmux或nohup执行】</p>
-<h3 id="三-测试"><a href="#三-测试" class="headerlink" title="三.测试"></a>三.测试</h3><h5 id="1-创建topic"><a href="#1-创建topic" class="headerlink" title="1.创建topic"></a>1.创建topic</h5><blockquote>
-<p>bin/kafka-topics.sh –create –zookeeper localhost:2180 –replication-factor 1 –partitions 8 –topic test_topic</p>
-</blockquote>
+<h3 id="三-测试"><a href="#三-测试" class="headerlink" title="三.测试"></a>三.测试</h3><h5 id="1-创建topic"><a href="#1-创建topic" class="headerlink" title="1.创建topic"></a>1.创建topic</h5><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> --<span class="comment">create</span> --<span class="comment">zookeeper</span> <span class="comment">localhost:2180</span> --<span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">1</span> --<span class="comment">partitions</span> <span class="comment">8</span> --<span class="comment">topic</span> <span class="comment">test_topic</span></span><br></pre></td></tr></table></figure>
 <p>指定zk地址，副本数，分区数，topic名称</p>
-<h5 id="2-查看topic"><a href="#2-查看topic" class="headerlink" title="2.查看topic"></a>2.查看topic</h5><blockquote>
-<p>bin/kafka-topics.sh –list –zookeeper 127.0.0.1:2180</p>
-</blockquote>
+<h5 id="2-查看topic"><a href="#2-查看topic" class="headerlink" title="2.查看topic"></a>2.查看topic</h5><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-topics.sh --list --zookeeper <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">2180</span></span><br></pre></td></tr></table></figure>
 <h5 id="3-启动一个控制台生产者和控制台消费者验证是否正常使用"><a href="#3-启动一个控制台生产者和控制台消费者验证是否正常使用" class="headerlink" title="3.启动一个控制台生产者和控制台消费者验证是否正常使用"></a>3.启动一个控制台生产者和控制台消费者验证是否正常使用</h5><ul>
 <li><p>控制台生产者</p>
-<blockquote>
-<p>bin/kafka-console-producer.sh –broker-list 127.0.0.1:9090 –topic test_topic</p>
-</blockquote>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-console-producer.sh --broker-list <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9090</span> --topic test_topic</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>控制台消费者</p>
-<blockquote>
-<p>bin/kafka-console-consumer.sh –bootstrap-server 127.0.0.1:9090 –topic test_topic –from-beginning</p>
-</blockquote>
+</ul>
+<ul>
+<li><p>控制台消费者(从头开始消费)</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-console-consumer.sh --bootstrap-server <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9090</span> --topic test_topic --<span class="keyword">from</span>-beginning</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="四-其他命令"><a href="#四-其他命令" class="headerlink" title="四.其他命令"></a>四.其他命令</h3><p>1.修改分区数</p>
-<blockquote>
-<p>./bin/kafka-topics.sh –alter –zookeeper 127.0.0.1:2180 –topic test_topic –partitions 8</p>
-</blockquote>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/kafka-topics.sh --alter --zookeeper <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">2180</span> --topic test_topic --partitions <span class="number">8</span></span><br></pre></td></tr></table></figure>
 <p>2.查看分区</p>
-<blockquote>
-<p>./bin/kafka-topics.sh –describe –zookeeper 127.0.0.1:2180 –topic test_topic</p>
-</blockquote>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/kafka-topics.sh --describe --zookeeper <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">2180</span> --topic test_topic</span><br></pre></td></tr></table></figure>
 <p><strong>PS: 提高分区数是提高并发的有效方式</strong></p>
 
       
@@ -509,10 +497,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
@@ -522,6 +506,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
