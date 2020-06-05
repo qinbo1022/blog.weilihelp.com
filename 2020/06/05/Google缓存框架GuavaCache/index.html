@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>Tag: 图床 | bobo的鬼屋</title>
+  <title>Google缓存框架GuavaCache | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java后端Boy">
-<meta name="keywords" content="代码">
-<meta property="og:type" content="website">
-<meta property="og:title" content="bobo的鬼屋">
-<meta property="og:url" content="//blog.qinbo.top/tags/图床/index.html">
+  <meta name="description" content="what、why、how三部曲1.GuavaCache是什么？GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。 2.什么时候用GuavaCache?与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访">
+<meta name="keywords" content="学习笔记,Guava">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google缓存框架GuavaCache">
+<meta property="og:url" content="//blog.qinbo.top/2020/06/05/Google缓存框架GuavaCache/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="Java后端Boy">
+<meta property="og:description" content="what、why、how三部曲1.GuavaCache是什么？GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。 2.什么时候用GuavaCache?与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-05T05:57:09.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bobo的鬼屋">
-<meta name="twitter:description" content="Java后端Boy">
+<meta name="twitter:title" content="Google缓存框架GuavaCache">
+<meta name="twitter:description" content="what、why、how三部曲1.GuavaCache是什么？GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。 2.什么时候用GuavaCache?与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -156,60 +157,239 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Google缓存框架GuavaCache" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/27/github图床配置/" class="archive-article-date">
-  	<time datetime="2020-05-27T06:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/27/github图床配置/">github图床配置</a>
+    <h1 class="article-title" itemprop="name">
+      Google缓存框架GuavaCache
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/05/Google缓存框架GuavaCache/" class="archive-article-date">
+  	<time datetime="2020-06-05T05:56:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="what、why、how三部曲"><a href="#what、why、how三部曲" class="headerlink" title="what、why、how三部曲"></a>what、why、how三部曲</h3><h4 id="1-GuavaCache是什么？"><a href="#1-GuavaCache是什么？" class="headerlink" title="1.GuavaCache是什么？"></a>1.GuavaCache是什么？</h4><p>GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。</p>
+<h4 id="2-什么时候用GuavaCache"><a href="#2-什么时候用GuavaCache" class="headerlink" title="2.什么时候用GuavaCache?"></a>2.什么时候用GuavaCache?</h4><p>与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访问起来更加高效，并且GuavaCache将很多常见的业务场景进行高度封装，使用起来非常灵活，对内存中的数据管理也有更多的方案。<br>    Guava官网介绍，下面的这几种情况可以考虑使用Guava Cache：</p>
+<pre><code>- 愿意消耗一些内存空间来提升速度。
+- 预料到某些键会被多次查询。
+- 缓存中存放的数据总量不会超出内存容量。
+</code></pre><h4 id="3-如何使用GuavaCache？"><a href="#3-如何使用GuavaCache？" class="headerlink" title="3.如何使用GuavaCache？"></a>3.如何使用GuavaCache？</h4><h5 id="1-构建缓存对象"><a href="#1-构建缓存对象" class="headerlink" title="1. 构建缓存对象"></a>1. 构建缓存对象</h5><p> 可以通过CacheBuilder类构建一个缓存对象，CacheBuilder采用builder设计模式，它的每个方法都返回CacheBuilder本身，直到build()方法被调用。构建一个对象的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().build();</span><br><span class="line">    cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-设置最大存储量"><a href="#2-设置最大存储量" class="headerlink" title="2. 设置最大存储量"></a>2. 设置最大存储量</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().maximumSize(<span class="number">3</span>).build();</span><br><span class="line">    cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">    cache.put(<span class="string">"hello1"</span>, <span class="string">"hello world1"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello2"</span>, <span class="string">"hello world2"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello3"</span>, <span class="string">"hello world3"</span>);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello1"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello2"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello3"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello world
+null
+hello world1
+hello world2
+hello world3
+</code></pre><h5 id="3-设置过期时间"><a href="#3-设置过期时间" class="headerlink" title="3. 设置过期时间"></a>3. 设置过期时间</h5><p> <strong>expireAfterWrite</strong>是设置put到Cache的对象3秒过期，不论中间有没有被访问。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">   Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().expireAfterWrite(<span class="number">3</span>, TimeUnit.SECONDS).maximumSize(<span class="number">3</span>).build();</span><br><span class="line">   cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;;i++)&#123;</span><br><span class="line">        System.out.println(<span class="string">"第"</span>+i+<span class="string">"次获取key的值："</span>+ cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">        Thread.sleep(<span class="number">1000L</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>第0次获取key的值：hello world
+第1次获取key的值：hello world
+第2次获取key的值：hello world
+第3次获取key的值：null
+第4次获取key的值：null
+第5次获取key的值：null
+第6次获取key的值：null
+</code></pre><p><strong>expireAfterAccess</strong>是设置Cache中对象超过3秒没有被访问就会过期。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">   Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().expireAfterAccess(<span class="number">3</span>, TimeUnit.SECONDS).maximumSize(<span class="number">3</span>).build();</span><br><span class="line">    cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; ; i++) &#123;</span><br><span class="line">        System.out.println(<span class="string">"第"</span> + i + <span class="string">"秒获取key的值："</span> + cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">        Thread.sleep(i * <span class="number">1000L</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>第0秒获取key的值：hello world
+第1秒获取key的值：hello world
+第2秒获取key的值：hello world
+第3秒获取key的值：hello world
+第4秒获取key的值：null
+第5秒获取key的值：null
+第6秒获取key的值：null
+</code></pre><h5 id="4-显示清除"><a href="#4-显示清除" class="headerlink" title="4. 显示清除"></a>4. 显示清除</h5><p> 可以调用Cache的invalidateAll批量移除记录或者调用invalidate移除Cache中的一个记录，invalidateAll的参数是Iterable类型的，参数包含要删除的key值，当没有传入任何参数时，invalidateAll将移除Cache中所有的记录。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().build();</span><br><span class="line">    cache.put(<span class="string">"hello1"</span>,<span class="string">"world1"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello2"</span>,<span class="string">"world2"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello3"</span>,<span class="string">"world3"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello4"</span>,<span class="string">"world4"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//cache.invalidate("hello2");</span></span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    list.add(<span class="string">"hello2"</span>);</span><br><span class="line">    list.add(<span class="string">"hello3"</span>);</span><br><span class="line"></span><br><span class="line">    cache.invalidateAll(list);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello1"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello2"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello3"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello4"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>world1
+null
+null
+world4
+</code></pre><h5 id="5-移除监听器"><a href="#5-移除监听器" class="headerlink" title="5. 移除监听器"></a>5. 移除监听器</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	RemovalListener&lt;String, String&gt; listener = removalNotification -&gt; System.out.println(removalNotification.getKey()</span><br><span class="line">	        + <span class="string">":"</span> + removalNotification.getValue() + <span class="string">" is removed"</span>);</span><br><span class="line">	Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().removalListener(listener).maximumSize(<span class="number">3</span>).build();</span><br><span class="line">	cache.put(<span class="string">"hello1"</span>, <span class="string">"world1"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello2"</span>, <span class="string">"world2"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello3"</span>, <span class="string">"world3"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello4"</span>, <span class="string">"world4"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello5"</span>, <span class="string">"world5"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello1:world1 is removed
+hello2:world2 is removed
+</code></pre><p>以上列举了GuavaCache常用几种方法，源码请移步下方地址获取：</p>
+<blockquote>
+<p><a href="https://github.com/google/guava" target="_blank" rel="noopener">https://github.com/google/guava</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图床</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Guava</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aYYrEIAwG0N7/0rMHWKb9Eu2A+vw1FLf4uhASk+uK1+d25Xu+7fz//HpjYWBgLMvoHfHbe2bhq58GAwPjBMb9sZKwmOzPYfnZMDAwMJJXJzuT497vwcDAwMgZvXCcVJ0/DbgYGBgLMqrpWnLcXkL5ei2OgYGxICO/df/971f6GxgYGEsxPsWVp3e90NxbGBgYezPyANc7UK8wrp4HAwPjNEYyqjUSQKuFbhLKMTAw9mYkCV8vsOZtyzz4fr2qw8DAOIzRe5IcpXrQQgMAAwNja8Z4Y2AkvPYOOgTDwMBYkNEbzOqldNUCtRB2MTAwDmAkpWkCTuJ6r+X58BsDA+MARnWQYlZLINkfpaEYGBiHMarjDiOjGNXA/TAQhoGBsTWjF16TYrU6bNF8goGBsTUjv96aO3jRu4x7OCcGBsYxjJHAmjQPeulg1BHAwMDYlJGncSOXaHnLofofwMDAOIExdwijOpAxProRTZBhYGBswaha87BbveKvJovlWhwDA2MLxqz2ZPWjVNPQh4CLgYGxKaOQOcb52LRyNPkoGBgYmzI+xZV8gpE39MY+MDAw9mZUA2th9KF4xF77swzDwMBYlpGEyN6Vfd4W7bUlMDAwTmNUA1+StPVGx3rtVQwMDIxqYE3+tjfM8VCRY2BgYEyqiXvJ4isBFwMDYylGEgrzsnakLdr8EBgYGFszRoYqRkJtteU5oamJgYGxHuMPl4hqmMBQu/0AAAAASUVORK5CYII=" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/06/05/【ip地址、子网掩码、网关地址】浅析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【ip地址、子网掩码、网关地址】浅析
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/06/03/React学习-day02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React学习-day02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#what、why、how三部曲"><span class="toc-number">1.</span> <span class="toc-text">what、why、how三部曲</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-GuavaCache是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1.GuavaCache是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-什么时候用GuavaCache"><span class="toc-number">1.2.</span> <span class="toc-text">2.什么时候用GuavaCache?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-如何使用GuavaCache？"><span class="toc-number">1.3.</span> <span class="toc-text">3.如何使用GuavaCache？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-构建缓存对象"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 构建缓存对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-设置最大存储量"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 设置最大存储量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-设置过期时间"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 设置过期时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-显示清除"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 显示清除</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-移除监听器"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. 移除监听器</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '17fb7ed2646169e20d8f',
+  	clientSecret: '19426765ecbd5c3489d0ad82515b833e4c6a814a',
+  	repo: 'qinbo1022.github.io',
+  	owner: 'qinbo1022',
+  	admin: ['qinbo1022'],
+  	id: 'Fri Jun 05 2020 13:56:14 GMT+0800',
+  	distractionFreeMode: 'false'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
+
+  
+
+
+  
+
 
 
           </div>
@@ -232,9 +412,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
