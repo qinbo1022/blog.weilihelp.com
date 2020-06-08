@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>//blog.qinbo.top/2020/06/08/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E8%82%A9%E8%86%80%E4%B8%8A-%E5%BC%80%E6%BA%90Java%E7%B1%BB%E5%BA%93/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/%E4%B8%BA%E4%BB%80%E4%B9%88Java14%E4%BA%86%E8%BF%98%E5%9C%A8%E4%BD%BF%E7%94%A8Java8%EF%BC%9F/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8openJDK/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Spring%E6%A1%86%E6%9E%B6%E6%B5%85%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/SpringMVC%E6%A1%86%E6%9E%B6%E6%B5%85%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/SpringCloud%E6%A1%86%E6%9E%B6%E6%B5%85%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/SpringBoot%E6%A1%86%E6%9E%B6%E6%B5%85%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/MyBatis%E6%A1%86%E6%9E%B6%E6%B5%85%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Hibernate%E6%A1%86%E6%9E%B6%E6%B5%85%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Java%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Java14%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Java13%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Java11%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Java10%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
+    <loc>//blog.qinbo.top/2020/06/08/Java8%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2020-06-08</lastmod>
+  </url>  <url>
     <loc>//blog.qinbo.top/2020/06/05/ip%E5%9C%B0%E5%9D%80%E3%80%81%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E3%80%81%E7%BD%91%E5%85%B3%E5%9C%B0%E5%9D%80%E6%B5%85%E6%9E%90/</loc>
     <lastmod>2020-06-08</lastmod>
   </url>  <url>
@@ -8,9 +53,6 @@
     <lastmod>2020-06-08</lastmod>
   </url>  <url>
     <loc>//blog.qinbo.top/2020/06/05/Google%E7%BC%93%E5%AD%98%E6%A1%86%E6%9E%B6GuavaCache/</loc>
-    <lastmod>2020-06-08</lastmod>
-  </url>  <url>
-    <loc>//blog.qinbo.top/2020/06/08/guava%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2020-06-08</lastmod>
   </url>  <url>
     <loc>//blog.qinbo.top/2020/05/20/kafka%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
