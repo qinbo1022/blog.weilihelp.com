@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="//blog.qinbo.top">
   <title>Google缓存框架GuavaCache | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="what、why、how三部曲1.GuavaCache是什么？GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。 2.什么时候用GuavaCache?与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访">
+  <meta name="description" content="guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。">
 <meta name="keywords" content="学习笔记,Guava">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Google缓存框架GuavaCache">
 <meta property="og:url" content="//blog.qinbo.top/2020/06/05/Google缓存框架GuavaCache/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="what、why、how三部曲1.GuavaCache是什么？GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。 2.什么时候用GuavaCache?与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访">
+<meta property="og:description" content="guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-05T05:57:09.553Z">
+<meta property="og:updated_time" content="2020-06-08T02:56:47.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Google缓存框架GuavaCache">
-<meta name="twitter:description" content="what、why、how三部曲1.GuavaCache是什么？GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。 2.什么时候用GuavaCache?与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访">
+<meta name="twitter:description" content="guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -177,7 +177,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="what、why、how三部曲"><a href="#what、why、how三部曲" class="headerlink" title="what、why、how三部曲"></a>what、why、how三部曲</h3><h4 id="1-GuavaCache是什么？"><a href="#1-GuavaCache是什么？" class="headerlink" title="1.GuavaCache是什么？"></a>1.GuavaCache是什么？</h4><p>GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。</p>
+        <p>guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。</p>
+<a id="more"></a>
+<h3 id="what、why、how三部曲"><a href="#what、why、how三部曲" class="headerlink" title="what、why、how三部曲"></a>what、why、how三部曲</h3><h4 id="1-GuavaCache是什么？"><a href="#1-GuavaCache是什么？" class="headerlink" title="1.GuavaCache是什么？"></a>1.GuavaCache是什么？</h4><p>GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。</p>
 <h4 id="2-什么时候用GuavaCache"><a href="#2-什么时候用GuavaCache" class="headerlink" title="2.什么时候用GuavaCache?"></a>2.什么时候用GuavaCache?</h4><p>与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访问起来更加高效，并且GuavaCache将很多常见的业务场景进行高度封装，使用起来非常灵活，对内存中的数据管理也有更多的方案。<br>    Guava官网介绍，下面的这几种情况可以考虑使用Guava Cache：</p>
 <pre><code>- 愿意消耗一些内存空间来提升速度。
 - 预料到某些键会被多次查询。
@@ -308,11 +310,11 @@ hello2:world2 is removed
   
 <nav id="article-nav">
   
-    <a href="/2020/06/05/【ip地址、子网掩码、网关地址】浅析/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/05/ip地址、子网掩码、网关地址浅析/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          【ip地址、子网掩码、网关地址】浅析
+          ip地址、子网掩码、网关地址名词浅析
         
       </div>
     </a>
@@ -486,11 +488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图床</a>
+                <a href="javascript:void(0)" class="js-tag color1">Guava</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Guava</a>
+                <a href="javascript:void(0)" class="js-tag color4">未分类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
               <li class="article-tag-list-item">
