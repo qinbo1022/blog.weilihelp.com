@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>Java8新特性解析 | bobo的鬼屋</title>
+  <title>GuavaCache | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="带你了解Java8新特性。">
-<meta name="keywords" content="java,版本特性">
+  <meta name="description" content="guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。">
+<meta name="keywords" content="学习笔记,Guava">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java8新特性解析">
-<meta property="og:url" content="//blog.qinbo.top/2020/06/08/Java8新特性解析/index.html">
+<meta property="og:title" content="GuavaCache">
+<meta property="og:url" content="//blog.qinbo.top/2020/06/05/Guava Cache/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="带你了解Java8新特性。">
+<meta property="og:description" content="guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-09T01:30:25.356Z">
+<meta property="og:updated_time" content="2020-06-08T07:48:20.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java8新特性解析">
-<meta name="twitter:description" content="带你了解Java8新特性。">
+<meta name="twitter:title" content="GuavaCache">
+<meta name="twitter:description" content="guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -157,69 +157,72 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java8新特性解析" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Guava Cache" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java8新特性解析
+      GuavaCache
     </h1>
   
 
         
-        <a href="/2020/06/08/Java8新特性解析/" class="archive-article-date">
-  	<time datetime="2020-06-08T07:06:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+        <a href="/2020/06/05/Guava Cache/" class="archive-article-date">
+  	<time datetime="2020-06-05T05:56:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>带你了解Java8新特性。</p>
+        <p>guava cache是guava的提供的缓存框架，高度封装，用起来十分顺手。</p>
 <a id="more"></a>
-<p>​        Oracle公司于2014年3月18日发布Java 8，它支持函数式编程，新的JavaScript引擎，新的日期API，新的Stream API等。 Java8是一个大版本，其特性至今仍能满足大部分的业务需求，所以熟练的掌握势在必行。</p>
-<p>​        <strong>PS</strong>: Oracle公司从Java8u192版本后商用开始收费，不过用于个人、学校教育仍然是免费的。若公司项目中需要使用后续版本的功能，需要向Oracle购买License，或者使用openJDK对应版本，以免引起商业纠纷。</p>
-<h1 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h1><p>Java8 新增了非常多的特性，我们主要讨论以下几个：</p>
-<ul>
-<li><strong>Lambda 表达式</strong> − Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中）。</li>
-<li><strong>方法引用</strong> − 方法引用提供了非常有用的语法，可以直接引用已有Java类或对象（实例）的方法或构造器。与lambda联合使用，方法引用可以使语言的构造更紧凑简洁，减少冗余代码。</li>
-<li><strong>默认方法</strong> − 默认方法就是一个在接口里面有了一个实现的方法。</li>
-<li><strong>新工具</strong> − 新的编译工具，如：Nashorn引擎 jjs、 类依赖分析器jdeps。</li>
-<li><strong>Stream API</strong> −新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中。</li>
-<li><strong>Date Time API</strong> − 加强对日期与时间的处理。</li>
-<li><strong>Optional 类</strong> − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。</li>
-<li><strong>Nashorn, JavaScript 引擎</strong> − Java 8提供了一个新的Nashorn javascript引擎，它允许我们在JVM上运行特定的javascript应用。</li>
-</ul>
-<p>更多的新特性可以参阅官网：<a href="http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html" target="_blank" rel="noopener">What’s New in JDK 8</a></p>
-<h2 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h2><p>Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。</p>
-<p>Lambda 允许把函数作为一个方法的参数（函数作为参数传递进方法中）。</p>
-<p>使用 Lambda 表达式可以使代码变的更加简洁紧凑。</p>
-<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><pre><code>非任何接口都支持lambda表达式，适用于lambda表达式的接口称之为**函数式接口**，函数型接口是只有一个抽象方法的接口。例如：
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">GreetingService</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayMessage</span><span class="params">(String message)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>lambda 表达式的语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(parameters) -&gt; expression 或 (parameters) -&gt;&#123; statements; &#125;</span><br></pre></td></tr></table></figure>
-<p>以下是lambda表达式的重要特征:</p>
-<ul>
-<li><strong>可选类型声明：</strong>不需要声明参数类型，编译器可以统一识别参数值。</li>
-<li><strong>可选的参数圆括号：</strong>一个参数无需定义圆括号，但多个参数需要定义圆括号。</li>
-<li><strong>可选的大括号：</strong>如果主体包含了一个语句，就不需要使用大括号。</li>
-<li><strong>可选的返回关键字：</strong>如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。</li>
-</ul>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>Lambda 常用定义方式:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 不需要参数,返回值为 5  </span></span><br><span class="line">() -&gt; <span class="number">5</span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 2. 接收一个参数(数字类型),返回其2倍的值  </span></span><br><span class="line">x -&gt; <span class="number">2</span> * x  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 3. 接受2个参数(数字),并返回他们的差值  </span></span><br><span class="line">(x, y) -&gt; x – y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 4. 接收2个int型整数,返回他们的和  </span></span><br><span class="line">(<span class="keyword">int</span> x, <span class="keyword">int</span> y) -&gt; x + y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void)  </span></span><br><span class="line">(String s) -&gt; System.out.print(s)</span><br></pre></td></tr></table></figure>
-<p>看下面这个例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Tester</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      Java8Tester tester = <span class="keyword">new</span> Java8Tester();</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 类型声明</span></span><br><span class="line">      MathOperation addition = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a + b;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 不用类型声明</span></span><br><span class="line">      MathOperation subtraction = (a, b) -&gt; a - b;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 大括号中的返回语句</span></span><br><span class="line">      MathOperation multiplication = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; &#123; <span class="keyword">return</span> a * b; &#125;;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 没有大括号及返回语句</span></span><br><span class="line">      MathOperation division = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a / b;</span><br><span class="line">        </span><br><span class="line">      System.out.println(<span class="string">"10 + 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, addition));</span><br><span class="line">      System.out.println(<span class="string">"10 - 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, subtraction));</span><br><span class="line">      System.out.println(<span class="string">"10 x 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, multiplication));</span><br><span class="line">      System.out.println(<span class="string">"10 / 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, division));</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 不用括号</span></span><br><span class="line">      GreetingService greetService1 = message -&gt;</span><br><span class="line">      System.out.println(<span class="string">"Hello "</span> + message);</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 用括号</span></span><br><span class="line">      GreetingService greetService2 = (message) -&gt;</span><br><span class="line">      System.out.println(<span class="string">"Hello "</span> + message);</span><br><span class="line">        </span><br><span class="line">      greetService1.sayMessage(<span class="string">"Runoob"</span>);</span><br><span class="line">      greetService2.sayMessage(<span class="string">"Google"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="class"><span class="keyword">interface</span> <span class="title">MathOperation</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">operation</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="class"><span class="keyword">interface</span> <span class="title">GreetingService</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">sayMessage</span><span class="params">(String message)</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">operate</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, MathOperation mathOperation)</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> mathOperation.operation(a, b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，我们定义了两个函数式接口，数据计算（MathOperation）和问候服务（GreetingService），并为接口定义了不同的实现，举例实现了上方列出的常用表达方式。</p>
-<h3 id="深入"><a href="#深入" class="headerlink" title="深入"></a>深入</h3><h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h4><ul>
-<li>若Lambda体的内容有方法已经实现了，就可以使用方法引用。可以理解为方法引用是Lambda表达式的另外一种表现形式。</li>
-<li>Lambda体中调用方法的参数列表与返回值类型，要与函数式接口中抽象方法的函数列表和返回值类型保持一致。</li>
-</ul>
-<h4 id="构造器引用"><a href="#构造器引用" class="headerlink" title="构造器引用"></a>构造器引用</h4><ul>
-<li>格式：ClassName::new</li>
-<li>需要调用的构造器的参数列表要与函数式接口中抽象方法的参数列表保持一致</li>
-</ul>
+<h3 id="what、why、how三部曲"><a href="#what、why、how三部曲" class="headerlink" title="what、why、how三部曲"></a>what、why、how三部曲</h3><h4 id="1-GuavaCache是什么？"><a href="#1-GuavaCache是什么？" class="headerlink" title="1.GuavaCache是什么？"></a>1.GuavaCache是什么？</h4><p>GuavaCache是Guava中的缓存框架，与ConcurrentMap很相似，不一样的是，ConcurrentMap中的元素会一直保留直到显式的移除，而GuavaCache为了限制内存占用，通常会设定为自动回收元素。</p>
+<h4 id="2-什么时候用GuavaCache"><a href="#2-什么时候用GuavaCache" class="headerlink" title="2.什么时候用GuavaCache?"></a>2.什么时候用GuavaCache?</h4><p>与传统的缓存方案相比，如redis，GuavaCache是将数据放在内存当中，访问起来更加高效，并且GuavaCache将很多常见的业务场景进行高度封装，使用起来非常灵活，对内存中的数据管理也有更多的方案。<br>    Guava官网介绍，下面的这几种情况可以考虑使用Guava Cache：</p>
+<pre><code>- 愿意消耗一些内存空间来提升速度。
+- 预料到某些键会被多次查询。
+- 缓存中存放的数据总量不会超出内存容量。
+</code></pre><h4 id="3-如何使用GuavaCache？"><a href="#3-如何使用GuavaCache？" class="headerlink" title="3.如何使用GuavaCache？"></a>3.如何使用GuavaCache？</h4><h5 id="1-构建缓存对象"><a href="#1-构建缓存对象" class="headerlink" title="1. 构建缓存对象"></a>1. 构建缓存对象</h5><p> 可以通过CacheBuilder类构建一个缓存对象，CacheBuilder采用builder设计模式，它的每个方法都返回CacheBuilder本身，直到build()方法被调用。构建一个对象的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().build();</span><br><span class="line">    cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-设置最大存储量"><a href="#2-设置最大存储量" class="headerlink" title="2. 设置最大存储量"></a>2. 设置最大存储量</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().maximumSize(<span class="number">3</span>).build();</span><br><span class="line">    cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">    cache.put(<span class="string">"hello1"</span>, <span class="string">"hello world1"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello2"</span>, <span class="string">"hello world2"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello3"</span>, <span class="string">"hello world3"</span>);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello1"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello2"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello3"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello world
+null
+hello world1
+hello world2
+hello world3
+</code></pre><h5 id="3-设置过期时间"><a href="#3-设置过期时间" class="headerlink" title="3. 设置过期时间"></a>3. 设置过期时间</h5><p> <strong>expireAfterWrite</strong>是设置put到Cache的对象3秒过期，不论中间有没有被访问。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">   Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().expireAfterWrite(<span class="number">3</span>, TimeUnit.SECONDS).maximumSize(<span class="number">3</span>).build();</span><br><span class="line">   cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;;i++)&#123;</span><br><span class="line">        System.out.println(<span class="string">"第"</span>+i+<span class="string">"次获取key的值："</span>+ cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">        Thread.sleep(<span class="number">1000L</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>第0次获取key的值：hello world
+第1次获取key的值：hello world
+第2次获取key的值：hello world
+第3次获取key的值：null
+第4次获取key的值：null
+第5次获取key的值：null
+第6次获取key的值：null
+</code></pre><p><strong>expireAfterAccess</strong>是设置Cache中对象超过3秒没有被访问就会过期。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">   Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().expireAfterAccess(<span class="number">3</span>, TimeUnit.SECONDS).maximumSize(<span class="number">3</span>).build();</span><br><span class="line">    cache.put(<span class="string">"hello"</span>, <span class="string">"hello world"</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; ; i++) &#123;</span><br><span class="line">        System.out.println(<span class="string">"第"</span> + i + <span class="string">"秒获取key的值："</span> + cache.getIfPresent(<span class="string">"hello"</span>));</span><br><span class="line">        Thread.sleep(i * <span class="number">1000L</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>第0秒获取key的值：hello world
+第1秒获取key的值：hello world
+第2秒获取key的值：hello world
+第3秒获取key的值：hello world
+第4秒获取key的值：null
+第5秒获取key的值：null
+第6秒获取key的值：null
+</code></pre><h5 id="4-显示清除"><a href="#4-显示清除" class="headerlink" title="4. 显示清除"></a>4. 显示清除</h5><p> 可以调用Cache的invalidateAll批量移除记录或者调用invalidate移除Cache中的一个记录，invalidateAll的参数是Iterable类型的，参数包含要删除的key值，当没有传入任何参数时，invalidateAll将移除Cache中所有的记录。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().build();</span><br><span class="line">    cache.put(<span class="string">"hello1"</span>,<span class="string">"world1"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello2"</span>,<span class="string">"world2"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello3"</span>,<span class="string">"world3"</span>);</span><br><span class="line">    cache.put(<span class="string">"hello4"</span>,<span class="string">"world4"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//cache.invalidate("hello2");</span></span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    list.add(<span class="string">"hello2"</span>);</span><br><span class="line">    list.add(<span class="string">"hello3"</span>);</span><br><span class="line"></span><br><span class="line">    cache.invalidateAll(list);</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello1"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello2"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello3"</span>));</span><br><span class="line">    System.out.println(cache.getIfPresent(<span class="string">"hello4"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>world1
+null
+null
+world4
+</code></pre><h5 id="5-移除监听器"><a href="#5-移除监听器" class="headerlink" title="5. 移除监听器"></a>5. 移除监听器</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	RemovalListener&lt;String, String&gt; listener = removalNotification -&gt; System.out.println(removalNotification.getKey()</span><br><span class="line">	        + <span class="string">":"</span> + removalNotification.getValue() + <span class="string">" is removed"</span>);</span><br><span class="line">	Cache&lt;String, String&gt; cache = CacheBuilder.newBuilder().removalListener(listener).maximumSize(<span class="number">3</span>).build();</span><br><span class="line">	cache.put(<span class="string">"hello1"</span>, <span class="string">"world1"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello2"</span>, <span class="string">"world2"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello3"</span>, <span class="string">"world3"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello4"</span>, <span class="string">"world4"</span>);</span><br><span class="line">	cache.put(<span class="string">"hello5"</span>, <span class="string">"world5"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello1:world1 is removed
+hello2:world2 is removed
+</code></pre><p>以上列举了GuavaCache常用几种方法，源码请移步下方地址获取：</p>
+<blockquote>
+<p><a href="https://github.com/google/guava" target="_blank" rel="noopener">https://github.com/google/guava</a></p>
+</blockquote>
 
       
 
@@ -233,11 +236,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">版本特性</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Guava</a>
         		</li>
       		
 		</ul>
@@ -293,7 +296,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQWoDMQwF0N7/0lPoKhDq6EuT0tjPqxCCx28WimTp66u8rp/1+PlxPf/m+ZfrfX775uaFgYHxsYxrudYPuMorPUP9bBgYGOcw6kE2ffD6QPUA/eLMGBgYGK0gmAZfDAwMjHcw6gE6LY8xMDAwekVsZes07UsT0BtqcQwMjA9k9BoDf/P57f0NDAyMf8+4wjVPBNPmaOlUGBgYWzPS4Yle0btOECs7l3bAwMDYlNFrXq4fPGknNJNFDAyMYxjrA6WVYxqIK+xfd8PAwDiAUR+VqIfae6/w4s4GBgbGdox6Clg/6DpcpoAXO2NgYGzNqA9DpGMQvXQwHebAwMA4gdFL/tLGwOQFlZJLDAyMwxjpyEXloPMu680zIxgYGBsxJgNek5UGbgwMjBMYaSLYK18nQfxFMoqBgbE1I03s0q3n+1R2wMDAOIGRjj70xiPqB+rthoGBsSsjTezqATEd1EgbmaVaHAMDYwvG5Fhp2K2XsvV/CQwMjBMY9YCbtiHrITsNr6P/DQwMjA9nzNsDk5RufdzmfSEGBsYWjPp4VjpIEbQew/0xMDBOY1zh6oXResnaaxhgYGDszZgMp6bhuH7/12tIYGBg7M2YDEb0EsdeUwEDAwNjkvalLcxmbb1+ZRgYGBhhYdkL1mmboRlwMTAwjmGk12TzJigGBgZGesR6qVl/WfVWAQYGxmmM3tVY74qtVyrf0NnAwMD4VMY34fzrQed86qwAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS27DMAxF0ex/0y7QWdFIvY90kIa6GgWJ7eh4QIifxwOv63vtP6/u2l//+9f9M1tLhgwZH8u4tmt1zf6PV9fzPfC9yZAh4xwGCbL90Ll/DvmX5fcyZMiQsd00OdiRECxDhgwZdzFqx0GeBsuQIUNGJ4lNeeTXNHm+IReXIUPGBzLuagy84vMb+hsyZMj4Z4wrXLVAyV9QcVcyZMgYzSDtQ94wSFuVvFSHrpQhQ8ZQRlqs7zQg++lxPKkhQ4aMQQyy3U6ofUUB7sdnGTJkjGZ0AmU6lpE2NeOWgAwZMg5gkEMYT3E7bUj+Up4EXBkyZAxlpDekgxedVxOX52TIkDGOkQbBdCQrbXPy9PVJLi5DhoyhDNI+JCMUaeuRHyv5S5EhQ8ZsRi19TZsKfPEgK0OGjNMYvGSflvtrhf60MCdDhoxzGHzYotak5AU4kvrKkCHjHEat9F9LMoNORVqAkyFDxlAGKdanySR5Wq1FunymDBkyRjNqY1i1bdUSYHIklSFDxmxGa7ihNMhFAnEcmmXIkHEYo9OSJEE2TYDRM2XIkDGawcte6fhXJxx3ynkyZMiYx7jClY5nkdYjb1Iu75IhQ8ZoBl9pQKwNitXKfzJkyDiBkSaQafCttQH2d8mQIeNMBk9HeTuzFmSLoV+GDBkywnDMz6G89P9HkU6GDBky8EGtgyf7ueFoKEOGjI9ldJJYUqznm04DugwZMk5g3NUYqF1/V/FOhgwZQxlfxohb0Sb3L8AAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +310,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/06/08/Java10新特性解析/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/05/ip地址、子网掩码、网关地址浅析/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java10新特性解析
+          ip地址、子网掩码、网关地址名词浅析
         
       </div>
     </a>
   
   
-    <a href="/2020/06/05/小狗钱钱读后总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《小狗钱钱》读后总结</div>
+    <a href="/2020/06/03/React学习-day02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React学习-day02</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -345,7 +348,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新特性"><span class="toc-number">1.</span> <span class="toc-text">新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lambda-表达式"><span class="toc-number">1.1.</span> <span class="toc-text">Lambda 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前提"><span class="toc-number">1.1.1.</span> <span class="toc-text">前提</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">1.1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-number">1.1.3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深入"><span class="toc-number">1.1.4.</span> <span class="toc-text">深入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法引用"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">方法引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#构造器引用"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">构造器引用</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#what、why、how三部曲"><span class="toc-number">1.</span> <span class="toc-text">what、why、how三部曲</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-GuavaCache是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1.GuavaCache是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-什么时候用GuavaCache"><span class="toc-number">1.2.</span> <span class="toc-text">2.什么时候用GuavaCache?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-如何使用GuavaCache？"><span class="toc-number">1.3.</span> <span class="toc-text">3.如何使用GuavaCache？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-构建缓存对象"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 构建缓存对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-设置最大存储量"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 设置最大存储量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-设置过期时间"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 设置过期时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-显示清除"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 显示清除</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-移除监听器"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. 移除监听器</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -376,7 +379,7 @@ if(true){
   	repo: 'qinbo1022.github.io',
   	owner: 'qinbo1022',
   	admin: ['qinbo1022'],
-  	id: 'Mon Jun 08 2020 15:06:38 GMT+0800',
+  	id: 'Fri Jun 05 2020 13:56:14 GMT+0800',
   	distractionFreeMode: 'false'
 })
 gitalk.render('gitalk-container') 

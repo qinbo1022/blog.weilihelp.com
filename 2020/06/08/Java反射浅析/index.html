@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>Java8新特性解析 | bobo的鬼屋</title>
+  <title>Java反射浅析 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="带你了解Java8新特性。">
-<meta name="keywords" content="java,版本特性">
+  <meta name="description" content="Java后端Boy">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java8新特性解析">
-<meta property="og:url" content="//blog.qinbo.top/2020/06/08/Java8新特性解析/index.html">
+<meta property="og:title" content="Java反射浅析">
+<meta property="og:url" content="//blog.qinbo.top/2020/06/08/Java反射浅析/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="带你了解Java8新特性。">
+<meta property="og:description" content="Java后端Boy">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-09T01:30:25.356Z">
+<meta property="og:updated_time" content="2020-06-08T10:30:25.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java8新特性解析">
-<meta name="twitter:description" content="带你了解Java8新特性。">
+<meta name="twitter:title" content="Java反射浅析">
+<meta name="twitter:description" content="Java后端Boy">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -157,70 +157,27 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java8新特性解析" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java反射浅析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java8新特性解析
+      Java反射浅析
     </h1>
   
 
         
-        <a href="/2020/06/08/Java8新特性解析/" class="archive-article-date">
-  	<time datetime="2020-06-08T07:06:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+        <a href="/2020/06/08/Java反射浅析/" class="archive-article-date">
+  	<time datetime="2020-06-08T10:30:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>带你了解Java8新特性。</p>
-<a id="more"></a>
-<p>​        Oracle公司于2014年3月18日发布Java 8，它支持函数式编程，新的JavaScript引擎，新的日期API，新的Stream API等。 Java8是一个大版本，其特性至今仍能满足大部分的业务需求，所以熟练的掌握势在必行。</p>
-<p>​        <strong>PS</strong>: Oracle公司从Java8u192版本后商用开始收费，不过用于个人、学校教育仍然是免费的。若公司项目中需要使用后续版本的功能，需要向Oracle购买License，或者使用openJDK对应版本，以免引起商业纠纷。</p>
-<h1 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h1><p>Java8 新增了非常多的特性，我们主要讨论以下几个：</p>
-<ul>
-<li><strong>Lambda 表达式</strong> − Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中）。</li>
-<li><strong>方法引用</strong> − 方法引用提供了非常有用的语法，可以直接引用已有Java类或对象（实例）的方法或构造器。与lambda联合使用，方法引用可以使语言的构造更紧凑简洁，减少冗余代码。</li>
-<li><strong>默认方法</strong> − 默认方法就是一个在接口里面有了一个实现的方法。</li>
-<li><strong>新工具</strong> − 新的编译工具，如：Nashorn引擎 jjs、 类依赖分析器jdeps。</li>
-<li><strong>Stream API</strong> −新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中。</li>
-<li><strong>Date Time API</strong> − 加强对日期与时间的处理。</li>
-<li><strong>Optional 类</strong> − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。</li>
-<li><strong>Nashorn, JavaScript 引擎</strong> − Java 8提供了一个新的Nashorn javascript引擎，它允许我们在JVM上运行特定的javascript应用。</li>
-</ul>
-<p>更多的新特性可以参阅官网：<a href="http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html" target="_blank" rel="noopener">What’s New in JDK 8</a></p>
-<h2 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h2><p>Lambda 表达式，也可称为闭包，它是推动 Java 8 发布的最重要新特性。</p>
-<p>Lambda 允许把函数作为一个方法的参数（函数作为参数传递进方法中）。</p>
-<p>使用 Lambda 表达式可以使代码变的更加简洁紧凑。</p>
-<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><pre><code>非任何接口都支持lambda表达式，适用于lambda表达式的接口称之为**函数式接口**，函数型接口是只有一个抽象方法的接口。例如：
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">GreetingService</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayMessage</span><span class="params">(String message)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>lambda 表达式的语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(parameters) -&gt; expression 或 (parameters) -&gt;&#123; statements; &#125;</span><br></pre></td></tr></table></figure>
-<p>以下是lambda表达式的重要特征:</p>
-<ul>
-<li><strong>可选类型声明：</strong>不需要声明参数类型，编译器可以统一识别参数值。</li>
-<li><strong>可选的参数圆括号：</strong>一个参数无需定义圆括号，但多个参数需要定义圆括号。</li>
-<li><strong>可选的大括号：</strong>如果主体包含了一个语句，就不需要使用大括号。</li>
-<li><strong>可选的返回关键字：</strong>如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。</li>
-</ul>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>Lambda 常用定义方式:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 不需要参数,返回值为 5  </span></span><br><span class="line">() -&gt; <span class="number">5</span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 2. 接收一个参数(数字类型),返回其2倍的值  </span></span><br><span class="line">x -&gt; <span class="number">2</span> * x  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 3. 接受2个参数(数字),并返回他们的差值  </span></span><br><span class="line">(x, y) -&gt; x – y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 4. 接收2个int型整数,返回他们的和  </span></span><br><span class="line">(<span class="keyword">int</span> x, <span class="keyword">int</span> y) -&gt; x + y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void)  </span></span><br><span class="line">(String s) -&gt; System.out.print(s)</span><br></pre></td></tr></table></figure>
-<p>看下面这个例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Tester</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      Java8Tester tester = <span class="keyword">new</span> Java8Tester();</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 类型声明</span></span><br><span class="line">      MathOperation addition = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a + b;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 不用类型声明</span></span><br><span class="line">      MathOperation subtraction = (a, b) -&gt; a - b;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 大括号中的返回语句</span></span><br><span class="line">      MathOperation multiplication = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; &#123; <span class="keyword">return</span> a * b; &#125;;</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 没有大括号及返回语句</span></span><br><span class="line">      MathOperation division = (<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; a / b;</span><br><span class="line">        </span><br><span class="line">      System.out.println(<span class="string">"10 + 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, addition));</span><br><span class="line">      System.out.println(<span class="string">"10 - 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, subtraction));</span><br><span class="line">      System.out.println(<span class="string">"10 x 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, multiplication));</span><br><span class="line">      System.out.println(<span class="string">"10 / 5 = "</span> + tester.operate(<span class="number">10</span>, <span class="number">5</span>, division));</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 不用括号</span></span><br><span class="line">      GreetingService greetService1 = message -&gt;</span><br><span class="line">      System.out.println(<span class="string">"Hello "</span> + message);</span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 用括号</span></span><br><span class="line">      GreetingService greetService2 = (message) -&gt;</span><br><span class="line">      System.out.println(<span class="string">"Hello "</span> + message);</span><br><span class="line">        </span><br><span class="line">      greetService1.sayMessage(<span class="string">"Runoob"</span>);</span><br><span class="line">      greetService2.sayMessage(<span class="string">"Google"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="class"><span class="keyword">interface</span> <span class="title">MathOperation</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">operation</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="class"><span class="keyword">interface</span> <span class="title">GreetingService</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">sayMessage</span><span class="params">(String message)</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">operate</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, MathOperation mathOperation)</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> mathOperation.operation(a, b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这个例子中，我们定义了两个函数式接口，数据计算（MathOperation）和问候服务（GreetingService），并为接口定义了不同的实现，举例实现了上方列出的常用表达方式。</p>
-<h3 id="深入"><a href="#深入" class="headerlink" title="深入"></a>深入</h3><h4 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h4><ul>
-<li>若Lambda体的内容有方法已经实现了，就可以使用方法引用。可以理解为方法引用是Lambda表达式的另外一种表现形式。</li>
-<li>Lambda体中调用方法的参数列表与返回值类型，要与函数式接口中抽象方法的函数列表和返回值类型保持一致。</li>
-</ul>
-<h4 id="构造器引用"><a href="#构造器引用" class="headerlink" title="构造器引用"></a>构造器引用</h4><ul>
-<li>格式：ClassName::new</li>
-<li>需要调用的构造器的参数列表要与函数式接口中抽象方法的参数列表保持一致</li>
-</ul>
-
+        
       
 
       
@@ -234,10 +191,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">版本特性</a>
         		</li>
       		
 		</ul>
@@ -293,7 +246,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQWoDMQwF0N7/0lPoKhDq6EuT0tjPqxCCx28WimTp66u8rp/1+PlxPf/m+ZfrfX775uaFgYHxsYxrudYPuMorPUP9bBgYGOcw6kE2ffD6QPUA/eLMGBgYGK0gmAZfDAwMjHcw6gE6LY8xMDAwekVsZes07UsT0BtqcQwMjA9k9BoDf/P57f0NDAyMf8+4wjVPBNPmaOlUGBgYWzPS4Yle0btOECs7l3bAwMDYlNFrXq4fPGknNJNFDAyMYxjrA6WVYxqIK+xfd8PAwDiAUR+VqIfae6/w4s4GBgbGdox6Clg/6DpcpoAXO2NgYGzNqA9DpGMQvXQwHebAwMA4gdFL/tLGwOQFlZJLDAyMwxjpyEXloPMu680zIxgYGBsxJgNek5UGbgwMjBMYaSLYK18nQfxFMoqBgbE1I03s0q3n+1R2wMDAOIGRjj70xiPqB+rthoGBsSsjTezqATEd1EgbmaVaHAMDYwvG5Fhp2K2XsvV/CQwMjBMY9YCbtiHrITsNr6P/DQwMjA9nzNsDk5RufdzmfSEGBsYWjPp4VjpIEbQew/0xMDBOY1zh6oXResnaaxhgYGDszZgMp6bhuH7/12tIYGBg7M2YDEb0EsdeUwEDAwNjkvalLcxmbb1+ZRgYGBhhYdkL1mmboRlwMTAwjmGk12TzJigGBgZGesR6qVl/WfVWAQYGxmmM3tVY74qtVyrf0NnAwMD4VMY34fzrQed86qwAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aS27DMAwFwNz/0inQVYHWyiNpF7A8WhVCI3uyYPjR6xWv9/f6vfNzrfePTjv67OuKhYGBcVvGe7kSRnLaGrBGrs/EwMB4DqN6XB588yCbfH2H+xgYGBjLdC1JBOcBGgMDAyMPuL1Xx8DAwJgzkuOqKV0SpteB+5JaHAMD44aM6mDgP/++cL6BgYFxE8a7uObt+0kD7vB8DAyMrRnrFC1P5ublaH794jAcY2BgbM2Yh7xqiTtv6kVXLjAwMDZiVIvGanqXw5ojAQwMjIcx5u3+aiutujP6xcDAwLgho3eFIsE389OYEdXBGBgYWzDyhlev0M2f1RtnRmEXAwNjU0YvvUse2fvKmgkiBgbGFozqiDFpllWHjr2yGQMD4zmM6njgrHQwSvWKVzQwMDCexjirHM0bdpMdDAyMvRmTy1tJUnhWChgVsRgYGJsyeuVrL+G74pwot8XAwNiCUfinVgma7M+RGBgYT2D0GmrVeelkXJoPGzAwMHZiVANiPtSsDjirT3xN4joGBsYNGXmamF+zmLxoHpoxMDCewEgweXZZnZoWMtak2MbAwNiU8S6uamPuioHoH5/FwMDYmjFp+veK3urlsPwcDAyMvRnV9tlZoTkviRMSBgbGExhJArdOB6sxvnqR4sMvBgYGBsZ4zNnj5QMDDAwMjCQ1nKR9vRHpCfMNDAyMWzF6Ya46JJiMRT88CwMDY2vGZDAwafHnr1tIEDEwMHZjfAFFJMdlYBJKsgAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +260,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/06/08/Java10新特性解析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java10新特性解析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/05/小狗钱钱读后总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《小狗钱钱》读后总结</div>
+    <a href="/2020/06/08/SpringCloud框架浅析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringCloud框架浅析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -345,7 +289,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新特性"><span class="toc-number">1.</span> <span class="toc-text">新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lambda-表达式"><span class="toc-number">1.1.</span> <span class="toc-text">Lambda 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前提"><span class="toc-number">1.1.1.</span> <span class="toc-text">前提</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">1.1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-number">1.1.3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深入"><span class="toc-number">1.1.4.</span> <span class="toc-text">深入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法引用"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">方法引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#构造器引用"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">构造器引用</span></a></li></ol></li></ol></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -376,7 +320,7 @@ if(true){
   	repo: 'qinbo1022.github.io',
   	owner: 'qinbo1022',
   	admin: ['qinbo1022'],
-  	id: 'Mon Jun 08 2020 15:06:38 GMT+0800',
+  	id: 'Mon Jun 08 2020 18:30:13 GMT+0800',
   	distractionFreeMode: 'false'
 })
 gitalk.render('gitalk-container') 

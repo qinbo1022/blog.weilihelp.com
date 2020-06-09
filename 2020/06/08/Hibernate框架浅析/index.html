@@ -9,14 +9,14 @@
   <title>Hibernate框架浅析 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="宏观了解Hibernate框架。">
-<meta name="keywords" content="java框架,Hibernate">
+<meta name="keywords" content="java框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate框架浅析">
 <meta property="og:url" content="//blog.qinbo.top/2020/06/08/Hibernate框架浅析/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
 <meta property="og:description" content="宏观了解Hibernate框架。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-08T07:19:32.139Z">
+<meta property="og:updated_time" content="2020-06-08T07:56:38.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate框架浅析">
 <meta name="twitter:description" content="宏观了解Hibernate框架。">
@@ -179,6 +179,21 @@ var _hmt = _hmt || [];
       
         <p>宏观了解Hibernate框架。</p>
 <a id="more"></a>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>​        Hibernate是一个开源的对象关系映射框架（Object Relational Mapping），它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句（HQL），自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。 </p>
+<h1 id="核心API"><a href="#核心API" class="headerlink" title="核心API"></a>核心API</h1><p>Hibernate的API一共有6个，分别为:<a href="https://baike.baidu.com/item/Session/479100" target="_blank" rel="noopener">Session</a>、<a href="https://baike.baidu.com/item/SessionFactory" target="_blank" rel="noopener">SessionFactory</a>、<a href="https://baike.baidu.com/item/Transaction/4114110" target="_blank" rel="noopener">Transaction</a>、<a href="https://baike.baidu.com/item/Query" target="_blank" rel="noopener">Query</a>、<a href="https://baike.baidu.com/item/Criteria" target="_blank" rel="noopener">Criteria</a>和Configuration。通过这些<a href="https://baike.baidu.com/item/接口" target="_blank" rel="noopener">接口</a>，可以对持久化对象进行存取、事务控制。</p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a><strong>Session</strong></h2><p><a href="https://baike.baidu.com/item/Session" target="_blank" rel="noopener">Session</a>接口负责执行被持久化对象的CRUD操作(CRUD的任务是完成与数据库的交流，包含了很多常见的SQL语句)。但需要注意的是Session对象是<strong>非线程安全</strong>的。同时，Hibernate的<a href="https://baike.baidu.com/item/session" target="_blank" rel="noopener">session</a>不同于JSP应用中的HttpSession。这里当使用session这个术语时，其实指的是Hibernate中的session，而以后会将HttpSession对象称为用户session。</p>
+<h2 id="SessionFactory"><a href="#SessionFactory" class="headerlink" title="SessionFactory"></a><strong>SessionFactory</strong></h2><p>SessionFactory接口负责初始化Hibernate。它充当数据存储源的代理，并负责创建Session对象。这里用到了<a href="https://baike.baidu.com/item/工厂模式" target="_blank" rel="noopener">工厂模式</a>。需要注意的是SessionFactory并不是轻量级的，因为一般情况下，一个项目通常只需要一个SessionFactory就够，当需要操作多个数据库时，可以为每个数据库指定一个SessionFactory。</p>
+<h2 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a><strong>Transaction</strong></h2><p>Transaction 接口是一个可选的API，可以选择不使用这个接口，取而代之的是Hibernate 的设计者自己写的底层事务处理代码。 Transaction 接口是对实际事务实现的一个抽象，这些实现包括JDBC的事务、JTA 中的UserTransaction、甚至可以是CORBA 事务。之所以这样设计是能让开发者能够使用一个统一事务的操作界面，使得自己的项目可以在不同的环境和容器之间方便地移植。</p>
+<h2 id="Query"><a href="#Query" class="headerlink" title="Query"></a><strong>Query</strong></h2><p>Query接口让你方便地对数据库及持久对象进行查询，它可以有两种表达方式：HQL语言或本地数据库的SQL语句。Query经常被用来绑定查询参数、限制查询记录数量，并最终执行查询操作。</p>
+<h2 id="Criteria"><a href="#Criteria" class="headerlink" title="Criteria"></a><strong>Criteria</strong></h2><p>Criteria接口与Query接口非常类似，允许创建并执行面向对象的标准化查询。值得注意的是Criteria接口也是轻量级的，它不能在Session之外使用。</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a><strong>Configuration</strong></h2><p>Configuration 类的作用是对Hibernate 进行配置，以及对它进行启动。在Hibernate 的启动过程中，Configuration 类的实例首先定位映射文档的位置，读取这些配置，然后创建一个SessionFactory对象。虽然Configuration 类在整个Hibernate 项目中只扮演着一个很小的角色，但它是启动hibernate 时所遇到的第一个对象。</p>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
+<li>将对数据库的操作转换为对Java对象的操作，从而简化开发。通过修改一个“持久化”对象的属性从而修改数据库表中对应的记录数据。</li>
+<li>提供线程和进程两个级别的缓存提升应用程序性能。</li>
+<li>有丰富的映射方式将Java对象之间的关系转换为数据库表之间的关系。</li>
+<li>屏蔽不同数据库实现之间的差异。在Hibernate中只需要通过“方言”的形式指定当前使用的数据库，就可以根据底层数据库的实际情况生成适合的SQL语句。</li>
+<li>非侵入式：Hibernate不要求持久化类实现任何接口或继承任何类，POJO即可。</li>
+</ul>
 
       
 
@@ -193,10 +208,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java框架</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
         		</li>
       		
 		</ul>
@@ -304,7 +315,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#核心API"><span class="toc-number">2.</span> <span class="toc-text">核心API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Session"><span class="toc-number">2.1.</span> <span class="toc-text">Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SessionFactory"><span class="toc-number">2.2.</span> <span class="toc-text">SessionFactory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transaction"><span class="toc-number">2.3.</span> <span class="toc-text">Transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Query"><span class="toc-number">2.4.</span> <span class="toc-text">Query</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Criteria"><span class="toc-number">2.5.</span> <span class="toc-text">Criteria</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-number">2.6.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#特点"><span class="toc-number">3.</span> <span class="toc-text">特点</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -436,14 +447,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Guava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -452,11 +455,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java框架</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color1">Guava</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,23 +475,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图床</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">openjdk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开源Java库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,7 +483,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">openjdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开源Java库</a>
               </li>
              
               <li class="article-tag-list-item">
