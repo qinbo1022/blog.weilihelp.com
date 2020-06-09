@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//blog.qinbo.top/"/>
-  <updated>2020-06-08T10:30:25.184Z</updated>
+  <updated>2020-06-09T09:51:55.349Z</updated>
   <id>//blog.qinbo.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HashMap浅析</title>
+    <link href="//blog.qinbo.top/2020/06/09/HashMap%E6%B5%85%E6%9E%90/"/>
+    <id>//blog.qinbo.top/2020/06/09/HashMap浅析/</id>
+    <published>2020-06-09T08:17:46.000Z</published>
+    <updated>2020-06-09T09:51:55.349Z</updated>
+    
+    <content type="html"><![CDATA[<p>HashMap是Java中非常常用的kv存储结构</p><p>创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：</p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png" alt></p><p>默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。</p><p><strong>为什么是16呢？</strong></p><p>根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当你指定容量时会被指定为指定的数的下一个2的幂，比如</p><blockquote><p>3 -&gt; 4，5 -&gt; 8，10 -&gt;16</p></blockquote><p>负载系数0.75，这个数据没有具体的解释，最被接受的说法是：0.75是3/4，和2的幂16相乘可以得到一个整数。</p><p><strong>扩容机制</strong></p><p>扩容分两步</p><ol><li>扩容：创建一个新的Entry空数组，长度是原数组的2倍。 </li><li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。（长度扩大以后，Hash的规则也随之改变）</li></ol><p><strong>插入规则</strong></p><p>HashMap是我们非常常用的数据结构，由<strong>数组和链表组合构成</strong>的数据结构，新创建的hashmap是空的，在put插入的时候会根据key的hash去计算一个index值。根据这个index的值插入到map中，极端情况下，有两个key的hash的值是一样的，就会形成一个链表结构：</p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609172943.png" alt></p><p><strong>重写equals必须重写hashcode</strong></p><p>并发场景用 <strong>HashTable</strong>或者<strong>ConcurrentHashMap</strong></p><p>HashTable的并发控制是通过关键字synchronized，并发量受限制，较多的是使用<strong>ConcurrentHashMap</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;HashMap是Java中非常常用的kv存储结构&lt;/p&gt;
+&lt;p&gt;创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/qinbo1022/ima
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="//blog.qinbo.top/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java反射浅析</title>
@@ -191,9 +216,9 @@
     <link href="//blog.qinbo.top/2020/06/08/Java%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/"/>
     <id>//blog.qinbo.top/2020/06/08/Java常用框架/</id>
     <published>2020-06-08T07:09:26.000Z</published>
-    <updated>2020-06-08T07:18:11.592Z</updated>
+    <updated>2020-06-09T07:55:38.329Z</updated>
     
-    <content type="html"><![CDATA[<p>常用Java框架合集。</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>常用Java框架合集。</p><a id="more"></a><p>spring</p><p>struts</p><p>hibernate</p><p>mybatis</p><p>springmvc</p><p>springboot</p><p>springcloud</p>]]></content>
     
     <summary type="html">
     
@@ -213,9 +238,13 @@
     <link href="//blog.qinbo.top/2020/06/08/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8openJDK/"/>
     <id>//blog.qinbo.top/2020/06/08/如何使用openJDK/</id>
     <published>2020-06-08T07:08:52.000Z</published>
-    <updated>2020-06-08T07:23:52.788Z</updated>
+    <updated>2020-06-09T03:47:29.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>oracle jdk在8u192版本后商用开始收费，如果项目上已经使用了此版本以后的版本特性，在没有license的情况下应该怎么避免商业纠纷？</p><a id="more"></a><h1 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h1><p>oracle jdk在8u192版本后商用开始收费，openjdk是免费开源的，并且代码是精简，这时选择openjdk作为开发环境是最好的选择。</p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>对比oracle jdk和openjdk的区别，可以归纳为以下几点：</p><ul><li><strong>授权协议的不同</strong></li></ul><p>openjdk采用GPL V2（ General Public License，通用性公开许可证 ）协议放出，而JDK则采用JRL放出。两者协议虽然都是开放源代码的，但是在使用上的不同在于GPL V2允许在商业上使用，而JRL只允许个人研究使用。</p><ul><li><strong>OpenJDK不包含Deployment（部署）功能</strong></li></ul><p>部署的功能包括：Browser Plugin、Java Web Start、以及Java控制面板，这些功能在Openjdk中是找不到的。</p><ul><li><strong>OpenJDK源代码不完整</strong></li></ul><p>这个很容易想到，在采用GPL协议的Openjdk中，sun jdk的一部分源代码因为产权的问题无法开放openjdk使用，其中最主要的部份就是JMX中的可选元件SNMP部份的代码。因此这些不能开放的源代码将它作成plug，以供OpenJDK编译时使用，你也可以选择不要使用plug。而Icedtea则为这些不完整的部分开发了相同功能的源代码(OpenJDK6)，促使OpenJDK更加完整。</p><ul><li><strong>部分源代码用开源代码替换</strong></li></ul><p>由于产权的问题，很多产权不是SUN的源代码被替换成一些功能相同的开源代码，比如说字体栅格化引擎，使用Free Type代替。</p><ul><li><strong>openjdk只包含最精简的JDK</strong></li></ul><p>OpenJDK不包含其他的软件包，比如Rhino Java DB JAXP……，并且可以分离的软件包也都是尽量的分离，但是这大多数都是自由软件，你可以自己下载加入。</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote><p>官网地址：<a href="http://jdk.java.net/" target="_blank" rel="noopener">http://jdk.java.net/</a> </p></blockquote><h2 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h2><p>1.从官网下载zip包</p><p>2.解压</p><p>3.将bin目录配置到path环境变量中</p><h2 id="linux安装"><a href="#linux安装" class="headerlink" title="linux安装"></a>linux安装</h2><p>1.卸载旧版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa|grep gcj</span><br><span class="line">yum -y remove java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64</span><br></pre></td></tr></table></figure><p>2.安装jdk</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk</span><br><span class="line">yum install java-1.8.0-openjdk-devel</span><br></pre></td></tr></table></figure><p>注意: </p><ul><li>安装java-1.8.0-openjdk后只有jre，必须继续安装yum install java-1.8.0-openjdk-devel</li><li>安装完后的路径为：/usr/lib/jvm </li></ul><p>3.配置环境变量</p><p>​    如果是通过yum安装openjdk的方式，则不需要此步骤</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输入以下内容</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-1.8.0</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="built_in">export</span> CLASS_PATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JRE_HOME</span>/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#退出保存</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#验证</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></span><br><span class="line">java --version</span><br></pre></td></tr></table></figure><h2 id="Ubuntu安装"><a href="#Ubuntu安装" class="headerlink" title="Ubuntu安装"></a>Ubuntu安装</h2><p>安装命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openjdk-8-jdk-headless</span><br></pre></td></tr></table></figure><p>配置环境变量和验证方式同上方CentOS</p>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;oracle jdk在8u192版本后商用开始收费，如果项目上已经使用了此版本以后的版本特性，在没有license的情况下应该怎么避免商业纠纷？&lt;/p&gt;
     
     </summary>
     
@@ -231,9 +260,9 @@
     <link href="//blog.qinbo.top/2020/06/08/%E4%B8%BA%E4%BB%80%E4%B9%88Java14%E4%BA%86%E8%BF%98%E5%9C%A8%E4%BD%BF%E7%94%A8Java8%EF%BC%9F/"/>
     <id>//blog.qinbo.top/2020/06/08/为什么Java14了还在使用Java8？/</id>
     <published>2020-06-08T07:07:51.000Z</published>
-    <updated>2020-06-08T07:24:31.980Z</updated>
+    <updated>2020-06-09T06:05:28.057Z</updated>
     
-    <content type="html"><![CDATA[<p>都9021年了，你还在用java8？</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>都9021年了，你还在用java8？</p><a id="more"></a><p>自2014年3月18日oracle发布java8以来，java8优秀的特性吸引了大批的公司和个人使用，直到2019年，据统计还有高达80%的公司和程序员还在使用java8，这是为什么呢？大家为什么不升级最新版的呢？</p><p> java9 发布于2017年9月22日， 从Java 9开始，Java版本的发布就让人眼花缭乱了。</p><p>每隔6个月，都会冒出一个新版本出来，Java 10 , Java 11, Java 12, Java 13， 到2020年3月份，Java 14就要来了。在这么多的版本中，只有Java 8, Java 11 和未来的Java 17 是长期支持版本（LTS），Oracle会支持3年，其他的只会支持6个月，新版本一出，就放弃老版本的技术支持。</p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609120012.png" alt="java新版本发布时间图"></p><p>这种快速的发布有好处吗？</p><p>有 ！ 小步快跑一直是我们软件开发的利器，采用迭代的方式，每次发布一部分功能，推向开发人员去验证，典型的敏捷思路。</p><p>但是这种好处更有利于JDK的开发者，对使用Java的个人和公司来说，想要跟上每六个月就要升级的步伐，实在是太难了。JDK是个非常核心的基础设施， 除了安全漏洞，谁没事去升级生产环境的JDK啊？出了问题谁负责？</p><p>所以，按道理讲大家都会去找那些LTS的版本来升级，例如Java 11， 但是事实证明大部分人还在固守Java 8 ：</p><p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609120129.png" alt="java版本使用分布图"></p><p>这个调查显示，使用Java 8的公司和程序员高达80%， 这是为什么呢？大家为什么不升级到Java 11呢？</p><p>我个人觉得主要原因是对开发有利的重大特性升级很少，吸引力不够。</p><p> 一个JDK的版本如果想被广泛采用，一定得能提升开发效率（如泛型、注解），带来变革，这样才有吸引力。</p><p>各个版本的特性可以查看我的其他文章。</p><blockquote><p>数据来源于网络，如侵犯版权，请联系作者删除。</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -247,17 +276,17 @@
   </entry>
   
   <entry>
-    <title>Java11新特性解析</title>
-    <link href="//blog.qinbo.top/2020/06/08/Java11%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/"/>
-    <id>//blog.qinbo.top/2020/06/08/Java11新特性解析/</id>
+    <title>Java13新特性解析</title>
+    <link href="//blog.qinbo.top/2020/06/08/Java13%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/"/>
+    <id>//blog.qinbo.top/2020/06/08/Java13新特性解析/</id>
     <published>2020-06-08T07:06:57.000Z</published>
-    <updated>2020-06-08T07:16:24.926Z</updated>
+    <updated>2020-06-08T07:16:37.380Z</updated>
     
-    <content type="html"><![CDATA[<p>上帝视角了解Java11新特性。</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>上帝视角了解Java13新特性。</p><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;上帝视角了解Java11新特性。&lt;/p&gt;
+      &lt;p&gt;上帝视角了解Java13新特性。&lt;/p&gt;
     
     </summary>
     
@@ -291,17 +320,17 @@
   </entry>
   
   <entry>
-    <title>Java13新特性解析</title>
-    <link href="//blog.qinbo.top/2020/06/08/Java13%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/"/>
-    <id>//blog.qinbo.top/2020/06/08/Java13新特性解析/</id>
+    <title>Java11新特性解析</title>
+    <link href="//blog.qinbo.top/2020/06/08/Java11%E6%96%B0%E7%89%B9%E6%80%A7%E8%A7%A3%E6%9E%90/"/>
+    <id>//blog.qinbo.top/2020/06/08/Java11新特性解析/</id>
     <published>2020-06-08T07:06:57.000Z</published>
-    <updated>2020-06-08T07:16:37.380Z</updated>
+    <updated>2020-06-08T07:16:24.926Z</updated>
     
-    <content type="html"><![CDATA[<p>上帝视角了解Java13新特性。</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>上帝视角了解Java11新特性。</p><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;上帝视角了解Java13新特性。&lt;/p&gt;
+      &lt;p&gt;上帝视角了解Java11新特性。&lt;/p&gt;
     
     </summary>
     
@@ -361,9 +390,9 @@
     <link href="//blog.qinbo.top/2020/06/05/%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1%E8%AF%BB%E5%90%8E%E6%80%BB%E7%BB%93/"/>
     <id>//blog.qinbo.top/2020/06/05/小狗钱钱读后总结/</id>
     <published>2020-06-05T06:41:35.000Z</published>
-    <updated>2020-06-08T02:57:49.142Z</updated>
+    <updated>2020-06-09T06:15:08.660Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>总结是最好的老师。</p></blockquote><a id="more"></a><p>《小狗钱钱》讲的是故事，是理财，也是人生。</p><p>【梦想存储罐和梦想相册】：</p><ol><li>界定范围，让梦想在可及范围</li><li>自我激励，让未来触手可及</li><li>积跬步至千里，保持梦想鲜活度</li></ol><p>【达瑞与表哥的故事】：</p><ol><li>发现并抓住身边的机会</li><li>不要因为客观因素忘了需要坚持的事情</li></ol>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>总结是最好的老师。</p></blockquote><a id="more"></a><p>《小狗钱钱》讲的是故事，是理财，也是人生。</p><p>【梦想存储罐和梦想相册】</p><ol><li>界定范围，让梦想在可及范围</li><li>自我激励，让未来触手可及</li><li>积跬步至千里，保持梦想鲜活度</li></ol><p>【达瑞与表哥的故事】</p><ol><li>发现并抓住身边的机会</li><li>不要因为客观因素忘了需要坚持的事情</li></ol><p>【与金先生的谈话】</p><ol><li><p>72小时定律，决定要做的事情要在72小时内完成，否则这件事就很难做成</p></li><li><p>养一直自己的鹅，让鹅每天生蛋</p></li><li>尽可能少的偿还贷款</li></ol>]]></content>
     
     <summary type="html">
     

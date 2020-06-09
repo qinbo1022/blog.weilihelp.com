@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="//blog.qinbo.top">
   <title>如何使用openJDK | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java后端Boy">
+  <meta name="description" content="oracle jdk在8u192版本后商用开始收费，如果项目上已经使用了此版本以后的版本特性，在没有license的情况下应该怎么避免商业纠纷？">
 <meta name="keywords" content="java,openjdk">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用openJDK">
 <meta property="og:url" content="//blog.qinbo.top/2020/06/08/如何使用openJDK/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="Java后端Boy">
+<meta property="og:description" content="oracle jdk在8u192版本后商用开始收费，如果项目上已经使用了此版本以后的版本特性，在没有license的情况下应该怎么避免商业纠纷？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-08T07:23:52.788Z">
+<meta property="og:updated_time" content="2020-06-09T03:47:29.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用openJDK">
-<meta name="twitter:description" content="Java后端Boy">
+<meta name="twitter:description" content="oracle jdk在8u192版本后商用开始收费，如果项目上已经使用了此版本以后的版本特性，在没有license的情况下应该怎么避免商业纠纷？">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -177,7 +177,55 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>oracle jdk在8u192版本后商用开始收费，如果项目上已经使用了此版本以后的版本特性，在没有license的情况下应该怎么避免商业纠纷？</p>
+<a id="more"></a>
+<h1 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h1><p>oracle jdk在8u192版本后商用开始收费，openjdk是免费开源的，并且代码是精简，这时选择openjdk作为开发环境是最好的选择。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>对比oracle jdk和openjdk的区别，可以归纳为以下几点：</p>
+<ul>
+<li><strong>授权协议的不同</strong></li>
+</ul>
+<p>openjdk采用GPL V2（ General Public License，通用性公开许可证 ）协议放出，而JDK则采用JRL放出。两者协议虽然都是开放源代码的，但是在使用上的不同在于GPL V2允许在商业上使用，而JRL只允许个人研究使用。</p>
+<ul>
+<li><strong>OpenJDK不包含Deployment（部署）功能</strong></li>
+</ul>
+<p>部署的功能包括：Browser Plugin、Java Web Start、以及Java控制面板，这些功能在Openjdk中是找不到的。</p>
+<ul>
+<li><strong>OpenJDK源代码不完整</strong></li>
+</ul>
+<p>这个很容易想到，在采用GPL协议的Openjdk中，sun jdk的一部分源代码因为产权的问题无法开放openjdk使用，其中最主要的部份就是JMX中的可选元件SNMP部份的代码。因此这些不能开放的源代码将它作成plug，以供OpenJDK编译时使用，你也可以选择不要使用plug。而Icedtea则为这些不完整的部分开发了相同功能的源代码(OpenJDK6)，促使OpenJDK更加完整。</p>
+<ul>
+<li><strong>部分源代码用开源代码替换</strong></li>
+</ul>
+<p>由于产权的问题，很多产权不是SUN的源代码被替换成一些功能相同的开源代码，比如说字体栅格化引擎，使用Free Type代替。</p>
+<ul>
+<li><strong>openjdk只包含最精简的JDK</strong></li>
+</ul>
+<p>OpenJDK不包含其他的软件包，比如Rhino Java DB JAXP……，并且可以分离的软件包也都是尽量的分离，但是这大多数都是自由软件，你可以自己下载加入。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
+<p>官网地址：<a href="http://jdk.java.net/" target="_blank" rel="noopener">http://jdk.java.net/</a> </p>
+</blockquote>
+<h2 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h2><p>1.从官网下载zip包</p>
+<p>2.解压</p>
+<p>3.将bin目录配置到path环境变量中</p>
+<h2 id="linux安装"><a href="#linux安装" class="headerlink" title="linux安装"></a>linux安装</h2><p>1.卸载旧版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa|grep gcj</span><br><span class="line">yum -y remove java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64</span><br></pre></td></tr></table></figure>
+<p>2.安装jdk</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk</span><br><span class="line">yum install java-1.8.0-openjdk-devel</span><br></pre></td></tr></table></figure>
+<p>注意: </p>
+<ul>
+<li>安装java-1.8.0-openjdk后只有jre，必须继续安装yum install java-1.8.0-openjdk-devel</li>
+<li>安装完后的路径为：/usr/lib/jvm </li>
+</ul>
+<p>3.配置环境变量</p>
+<p>​    如果是通过yum安装openjdk的方式，则不需要此步骤</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输入以下内容</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-1.8.0</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="built_in">export</span> CLASS_PATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JRE_HOME</span>/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#退出保存</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#验证</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></span><br><span class="line">java --version</span><br></pre></td></tr></table></figure>
+<h2 id="Ubuntu安装"><a href="#Ubuntu安装" class="headerlink" title="Ubuntu安装"></a>Ubuntu安装</h2><p>安装命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openjdk-8-jdk-headless</span><br></pre></td></tr></table></figure>
+<p>配置环境变量和验证方式同上方CentOS</p>
+
       
 
       
@@ -302,7 +350,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#现状"><span class="toc-number">1.</span> <span class="toc-text">现状</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">1.1.</span> <span class="toc-text">区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows安装"><span class="toc-number">2.1.</span> <span class="toc-text">windows安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux安装"><span class="toc-number">2.2.</span> <span class="toc-text">linux安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu安装"><span class="toc-number">2.3.</span> <span class="toc-text">Ubuntu安装</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -434,14 +482,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版本特性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -450,7 +490,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本特性</a>
               </li>
              
               <li class="article-tag-list-item">

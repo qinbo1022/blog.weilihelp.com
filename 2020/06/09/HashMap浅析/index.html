@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//blog.qinbo.top">
-  <title>Java常用框架 | bobo的鬼屋</title>
+  <title>HashMap浅析 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常用Java框架合集。">
-<meta name="keywords" content="java,java框架">
+  <meta name="description" content="HashMap是Java中非常常用的kv存储结构 创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：  默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。 为什么是16呢？ 根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java常用框架">
-<meta property="og:url" content="//blog.qinbo.top/2020/06/08/Java常用框架/index.html">
+<meta property="og:title" content="HashMap浅析">
+<meta property="og:url" content="//blog.qinbo.top/2020/06/09/HashMap浅析/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="常用Java框架合集。">
+<meta property="og:description" content="HashMap是Java中非常常用的kv存储结构 创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：  默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。 为什么是16呢？ 根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-09T07:55:38.329Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609172943.png">
+<meta property="og:updated_time" content="2020-06-09T09:51:55.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java常用框架">
-<meta name="twitter:description" content="常用Java框架合集。">
+<meta name="twitter:title" content="HashMap浅析">
+<meta name="twitter:description" content="HashMap是Java中非常常用的kv存储结构 创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：  默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。 为什么是16呢？ 根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
   
@@ -157,35 +160,48 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java常用框架" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HashMap浅析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java常用框架
+      HashMap浅析
     </h1>
   
 
         
-        <a href="/2020/06/08/Java常用框架/" class="archive-article-date">
-  	<time datetime="2020-06-08T07:09:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+        <a href="/2020/06/09/HashMap浅析/" class="archive-article-date">
+  	<time datetime="2020-06-09T08:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常用Java框架合集。</p>
-<a id="more"></a>
-<p>spring</p>
-<p>struts</p>
-<p>hibernate</p>
-<p>mybatis</p>
-<p>springmvc</p>
-<p>springboot</p>
-<p>springcloud</p>
+        <p>HashMap是Java中非常常用的kv存储结构</p>
+<p>创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：</p>
+<p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png" alt></p>
+<p>默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。</p>
+<p><strong>为什么是16呢？</strong></p>
+<p>根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当你指定容量时会被指定为指定的数的下一个2的幂，比如</p>
+<blockquote>
+<p>3 -&gt; 4，5 -&gt; 8，10 -&gt;16</p>
+</blockquote>
+<p>负载系数0.75，这个数据没有具体的解释，最被接受的说法是：0.75是3/4，和2的幂16相乘可以得到一个整数。</p>
+<p><strong>扩容机制</strong></p>
+<p>扩容分两步</p>
+<ol>
+<li>扩容：创建一个新的Entry空数组，长度是原数组的2倍。 </li>
+<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。（长度扩大以后，Hash的规则也随之改变）</li>
+</ol>
+<p><strong>插入规则</strong></p>
+<p>HashMap是我们非常常用的数据结构，由<strong>数组和链表组合构成</strong>的数据结构，新创建的hashmap是空的，在put插入的时候会根据key的hash去计算一个index值。根据这个index的值插入到map中，极端情况下，有两个key的hash的值是一样的，就会形成一个链表结构：</p>
+<p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609172943.png" alt></p>
+<p><strong>重写equals必须重写hashcode</strong></p>
+<p>并发场景用 <strong>HashTable</strong>或者<strong>ConcurrentHashMap</strong></p>
+<p>HashTable的并发控制是通过关键字synchronized，并发量受限制，较多的是使用<strong>ConcurrentHashMap</strong></p>
 
       
 
@@ -200,10 +216,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java框架</a>
         		</li>
       		
 		</ul>
@@ -259,7 +271,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aS46DMBAFwNz/0ow0q5EykNdtE4Epr6IgiItFpz9+veK1/a6/n9/X3tXkae/3vs5YGBgYt2Vshyv54eRp+aaTV/YPFQMD4wGMPMgmsS7H5+wPe8bAwMA4TNd6yL17MTAwMM4IuL2K8nL/GxgYGJdn5E204/I1Z+fBd3ItjoGBcUNGbzDwnc+nzzcwMDAuz9iKqxcce6+jsCsMDIylGUmSl3w/Xo7mY87dPWBgYCzNqB6bqBa91SNi+YGMqHeIgYFxc0a1HVYtbo9h1WFnebKBgYGxEGNuu39WKy1/QRgYGGsz5o4NJuSnAfv06QcGBsaFGXlpmhe9eXOtSo3SRAwMjIUY+aZ7pWn1V5pJKgYGxqKMPPD1BgbVwWdesmJgYDyHcXaxWk3yqsc+MDAwnsbIE77karXdP/INBgbG2oxec2280ZYXw1HKiIGBsTSjF3xHBpbJXSOHxjAwMNZjzCpKx5tlvZ1gYGA8gZGUlyNRvLetXnqKgYGxKqM6IMwbbfm9I0c9MDAwnsNIitVZZWqvhRcNBjAwMBZlJMnfSNY5Ms6sFt4YGBirMrbiygNo7wU1E1AMDIylGflKho69IWW+0XzYiYGBsR4jD7LV8UB+NW/M7d6LgYHxAEY1yPYOcORdsnLRi4GBgdFqyVXTxF6iiYGBgdGric9OFqfNNzAwMG7FGDlm0RtY9p7/IeBiYGAsyqgWkNVh5KxhQK+oxsDAuDnjB0asYL6QrJQcAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aSY6EMBBEUe5/aVqqVUvdmIhIg8rp7xVSMT0WrpyOQ17nZ/0+/ruuzh/f5+qexxMLBgwYyzLO4dIfP76n+w76u8GAAWMfhrs5uozxVcrxzTvDgAEDRnlTzkJDGDBgwKgnnMoDjPDu/f8NGDBgLMXQgzmdNA4Es414Qi4OAwaMBRlZY+Cd48f7GzBgwPh6xhktpdCWhYbh+8CAAaM1Qw/v6sU4d2hDL73BgAGjN0N/lXHZyy2Q1Uc0/tlqYcCA0ZQxK6GtFMuUTfmlvBwGDBhfyXCT0kobYNbngAEDxm4MPdjKxiPclHXCuAYMGDCaMrJBCrfEn5XtYMCAAcNNLN0ArhJEGr/CgAGjNcMdknBT2ScCR6OdCQMGjHYMt2TmBpGzehd60AkDBowejCwodItlepiYHcOAAWMfhvKipYcVtnXj/wEGDBjtGMqYhVK4z3LJMDW9OhMGDBhNGUpq6j4mK5a52/RRuR0MGDCWYihppzJU4YabWXvy5hwYMGBsxqg3EfU2ZwVm9GBhwIDRguEmsdmQRH2zhgEDxp6M+mBEtnVWynY318KAAaMRI0s43eBv3FTQ2w+XV8GAAaM1Q1/12+mtUH3ThwEDxj4Mt3Cvh252G9LccKXIEQYMGI0YlYRWAbsfxf5MMGDAgDGpiJ81IaTYFgYMGDDKI2L1YNToacCAAaMpQ7np3CZlNo5mdzhhwIDRguE2BvQHu1cp54eDYjBgwFiV8QPBUEHPpv97PgAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +285,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/06/08/站在巨人肩膀上-开源Java类库/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          站在巨人肩膀上-开源Java类库
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/08/如何使用openJDK/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何使用openJDK</div>
+    <a href="/2020/06/08/Java反射浅析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java反射浅析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +345,7 @@ if(true){
   	repo: 'qinbo1022.github.io',
   	owner: 'qinbo1022',
   	admin: ['qinbo1022'],
-  	id: 'Mon Jun 08 2020 15:09:26 GMT+0800',
+  	id: 'Tue Jun 09 2020 16:17:46 GMT+0800',
   	distractionFreeMode: 'false'
 })
 gitalk.render('gitalk-container') 
