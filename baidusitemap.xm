@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>//blog.qinbo.top/2020/06/05/%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1%E8%AF%BB%E5%90%8E%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2020-06-10</lastmod>
+  </url>  <url>
     <loc>//blog.qinbo.top/2020/06/09/HashMap%E6%B5%85%E6%9E%90/</loc>
-    <lastmod>2020-06-09</lastmod>
+    <lastmod>2020-06-10</lastmod>
   </url>  <url>
     <loc>//blog.qinbo.top/2020/06/08/Java%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2020-06-09</lastmod>
-  </url>  <url>
-    <loc>//blog.qinbo.top/2020/06/05/%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1%E8%AF%BB%E5%90%8E%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2020-06-09</lastmod>
   </url>  <url>
     <loc>//blog.qinbo.top/2020/06/08/%E4%B8%BA%E4%BB%80%E4%B9%88Java14%E4%BA%86%E8%BF%98%E5%9C%A8%E4%BD%BF%E7%94%A8Java8%EF%BC%9F/</loc>

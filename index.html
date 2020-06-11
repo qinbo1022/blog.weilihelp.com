@@ -178,29 +178,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HashMap是Java中非常常用的kv存储结构</p>
-<p>创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：</p>
-<p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png" alt></p>
-<p>默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。</p>
-<p><strong>为什么是16呢？</strong></p>
-<p>根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当你指定容量时会被指定为指定的数的下一个2的幂，比如</p>
-<blockquote>
-<p>3 -&gt; 4，5 -&gt; 8，10 -&gt;16</p>
-</blockquote>
-<p>负载系数0.75，这个数据没有具体的解释，最被接受的说法是：0.75是3/4，和2的幂16相乘可以得到一个整数。</p>
-<p><strong>扩容机制</strong></p>
-<p>扩容分两步</p>
-<ol>
-<li>扩容：创建一个新的Entry空数组，长度是原数组的2倍。 </li>
-<li>ReHash：遍历原Entry数组，把所有的Entry重新Hash到新数组。（长度扩大以后，Hash的规则也随之改变）</li>
-</ol>
-<p><strong>插入规则</strong></p>
-<p>HashMap是我们非常常用的数据结构，由<strong>数组和链表组合构成</strong>的数据结构，新创建的hashmap是空的，在put插入的时候会根据key的hash去计算一个index值。根据这个index的值插入到map中，极端情况下，有两个key的hash的值是一样的，就会形成一个链表结构：</p>
-<p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609172943.png" alt></p>
-<p><strong>重写equals必须重写hashcode</strong></p>
-<p>并发场景用 <strong>HashTable</strong>或者<strong>ConcurrentHashMap</strong></p>
-<p>HashTable的并发控制是通过关键字synchronized，并发量受限制，较多的是使用<strong>ConcurrentHashMap</strong></p>
-
+        <p>HashMap的属性，插入规则和扩容机制浅析。</p>
+        
       
 
       
@@ -895,6 +874,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本特性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -903,19 +890,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版本特性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,7 +898,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图床</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -931,7 +906,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+                <a href="javascript:void(0)" class="js-tag color3">图床</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -939,7 +918,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">

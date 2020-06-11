@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="//blog.qinbo.top">
   <title>HashMap浅析 | bobo的鬼屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HashMap是Java中非常常用的kv存储结构 创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：  默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。 为什么是16呢？ 根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当">
+  <meta name="description" content="HashMap的属性，插入规则和扩容机制浅析。">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HashMap浅析">
 <meta property="og:url" content="//blog.qinbo.top/2020/06/09/HashMap浅析/index.html">
 <meta property="og:site_name" content="bobo的鬼屋">
-<meta property="og:description" content="HashMap是Java中非常常用的kv存储结构 创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：  默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。 为什么是16呢？ 根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当">
+<meta property="og:description" content="HashMap的属性，插入规则和扩容机制浅析。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609172943.png">
-<meta property="og:updated_time" content="2020-06-09T09:51:55.349Z">
+<meta property="og:updated_time" content="2020-06-10T02:58:20.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap浅析">
-<meta name="twitter:description" content="HashMap是Java中非常常用的kv存储结构 创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：  默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。 为什么是16呢？ 根据算法，指定的容量需要是2的幂，即2、4、8、16等，这里指定16是经验值，当你不指定容量的时候会被设定为16，当">
+<meta name="twitter:description" content="HashMap的属性，插入规则和扩容机制浅析。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png">
   
     <link rel="alternative" href="/atom.xml" title="bobo的鬼屋" type="application/atom+xml">
@@ -180,7 +180,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HashMap是Java中非常常用的kv存储结构</p>
+        <p>HashMap的属性，插入规则和扩容机制浅析。</p>
+<a id="more"></a>
+<p>HashMap是Java中非常常用的kv存储结构</p>
 <p>创建一个新的hashmap的时候，阿里巴巴开发规范（插件）建议我们指定初始大小：</p>
 <p><img src="https://raw.githubusercontent.com/qinbo1022/image_online/master/20200609163759.png" alt></p>
 <p>默认容量capacity为16，负载系数loadFactor为0.75f，即size达到12（16*0.75）的时候就会触发扩容。</p>
@@ -446,6 +448,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本特性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -454,19 +464,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版本特性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,7 +472,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图床</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,7 +480,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+                <a href="javascript:void(0)" class="js-tag color3">图床</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,7 +492,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">
